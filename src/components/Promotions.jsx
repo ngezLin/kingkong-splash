@@ -33,7 +33,7 @@ export default function Promotion() {
 
   return (
     <section
-      id="promotion"
+      id="promotions"
       className="bg-[#FFF8E1] py-20 text-[#2F2723] text-center"
     >
       <div className="container mx-auto px-6">

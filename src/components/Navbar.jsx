@@ -1,17 +1,30 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react"; // ikon hamburger & close
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const target = document.querySelector(targetId);
+    if (target) {
+      const offset = target.getBoundingClientRect().top + window.scrollY - 80; // offset biar ga ketutupan navbar
+      window.scrollTo({ top: offset, behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#2F2723] shadow-md">
       <div className="container mx-auto flex justify-between items-center px-6 py-4 text-white">
         {/* Logo */}
-        <Link href="#hero" className="flex items-center">
+        <a
+          href="#hero"
+          onClick={(e) => handleScroll(e, "#hero")}
+          className="flex items-center"
+        >
           <Image
             src="/images/logo1.png"
             alt="King Kong Splash Logo"
@@ -20,28 +33,41 @@ export default function Navbar() {
             className="object-contain"
             priority
           />
-        </Link>
+        </a>
 
         {/* Menu desktop */}
         <div className="hidden md:flex space-x-8 font-medium">
-          <Link href="#hero" className="hover:text-[#F9C021] transition-colors">
+          <a
+            href="#hero"
+            onClick={(e) => handleScroll(e, "#hero")}
+            className="hover:text-[#F9C021] transition-colors"
+          >
             Home
-          </Link>
-          <Link
-            href="#about"
+          </a>
+          <a
+            href="#home"
+            onClick={(e) => handleScroll(e, "#home")}
             className="hover:text-[#F9C021] transition-colors"
           >
             Tentang
-          </Link>
-          <Link
+          </a>
+          <a
+            href="#promotions"
+            onClick={(e) => handleScroll(e, "#promotions")}
+            className="hover:text-[#F9C021] transition-colors"
+          >
+            Harga Tiket
+          </a>
+          <a
             href="#contact"
+            onClick={(e) => handleScroll(e, "#contact")}
             className="hover:text-[#F9C021] transition-colors"
           >
             Kontak
-          </Link>
+          </a>
         </div>
 
-        {/* Tombol hamburger (mobile) */}
+        {/* Tombol hamburger */}
         <button
           className="md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -53,27 +79,34 @@ export default function Navbar() {
       {/* Dropdown menu (mobile) */}
       {isOpen && (
         <div className="md:hidden bg-[#2F2723] text-white flex flex-col items-center space-y-4 py-6 animate-fade-in-down">
-          <Link
+          <a
             href="#hero"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => handleScroll(e, "#hero")}
             className="hover:text-[#F9C021]"
           >
             Home
-          </Link>
-          <Link
+          </a>
+          <a
             href="#about"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => handleScroll(e, "#about")}
             className="hover:text-[#F9C021]"
           >
             Tentang
-          </Link>
-          <Link
+          </a>
+          <a
+            href="#promotions"
+            onClick={(e) => handleScroll(e, "#promotions")}
+            className="hover:text-[#F9C021]"
+          >
+            Harga Tiket
+          </a>
+          <a
             href="#contact"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => handleScroll(e, "#contact")}
             className="hover:text-[#F9C021]"
           >
             Kontak
-          </Link>
+          </a>
         </div>
       )}
     </nav>

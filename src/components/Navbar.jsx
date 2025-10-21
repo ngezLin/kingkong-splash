@@ -49,11 +49,18 @@ export default function Navbar() {
             onClick={(e) => handleScroll(e, "#home")}
             className="hover:text-[#F9C021] transition-colors"
           >
+            Event
+          </a>
+          <a
+            href="#event"
+            onClick={(e) => handleScroll(e, "#event")}
+            className="hover:text-[#F9C021] transition-colors"
+          >
             Tentang
           </a>
           <a
-            href="#promotions"
-            onClick={(e) => handleScroll(e, "#promotions")}
+            href="#pricing"
+            onClick={(e) => handleScroll(e, "#pricing")}
             className="hover:text-[#F9C021] transition-colors"
           >
             Harga Tiket
@@ -87,6 +94,13 @@ export default function Navbar() {
             Home
           </a>
           <a
+            href="#event"
+            onClick={(e) => handleScroll(e, "#event")}
+            className="hover:text-[#F9C021]"
+          >
+            Event
+          </a>
+          <a
             href="#about"
             onClick={(e) => handleScroll(e, "#about")}
             className="hover:text-[#F9C021]"
@@ -94,8 +108,8 @@ export default function Navbar() {
             Tentang
           </a>
           <a
-            href="#promotions"
-            onClick={(e) => handleScroll(e, "#promotions")}
+            href="#pricing"
+            onClick={(e) => handleScroll(e, "#pricing")}
             className="hover:text-[#F9C021]"
           >
             Harga Tiket

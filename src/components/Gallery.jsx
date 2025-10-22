@@ -1,12 +1,16 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 export default function Gallery() {
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.2 });
+  const positionRef = useRef(0); // posisi terakhir animasi
+  const requestRef = useRef(null);
+  const startTimeRef = useRef(null);
+  const isPausedRef = useRef(false);
 
   const images = [
     "/images/gal1.png",
@@ -21,24 +25,30 @@ export default function Gallery() {
     "/images/gal10.png",
   ];
 
-  // Jalan otomatis saat muncul di layar
+  // Fungsi animasi manual (loop halus, bisa di-pause)
+  const animateLoop = (timestamp) => {
+    if (!startTimeRef.current) startTimeRef.current = timestamp;
+    const elapsed = timestamp - startTimeRef.current;
+
+    if (!isPausedRef.current) {
+      // Kecepatan scroll (px/ms)
+      const speed = 0.05;
+      positionRef.current = (positionRef.current - speed) % 50;
+      controls.set({ x: `${positionRef.current}%` });
+    }
+
+    requestRef.current = requestAnimationFrame(animateLoop);
+  };
+
   useEffect(() => {
     if (inView) {
-      controls.start({
-        x: ["0%", "-50%"],
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 25,
-            ease: "linear",
-          },
-        },
-        opacity: 1,
-        transitionEnd: { opacity: 1 },
-      });
+      requestRef.current = requestAnimationFrame(animateLoop);
+    } else {
+      cancelAnimationFrame(requestRef.current);
     }
-  }, [controls, inView]);
+
+    return () => cancelAnimationFrame(requestRef.current);
+  }, [inView]);
 
   return (
     <section
@@ -59,24 +69,16 @@ export default function Gallery() {
       {/* Gallery Animation */}
       <div
         className="relative overflow-hidden cursor-pointer"
-        onMouseEnter={() => controls.stop()}
-        onMouseLeave={() =>
-          controls.start({
-            x: ["0%", "-50%"],
-            transition: {
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 25,
-                ease: "linear",
-              },
-            },
-          })
-        }
+        onMouseEnter={() => {
+          isPausedRef.current = true;
+        }}
+        onMouseLeave={() => {
+          isPausedRef.current = false;
+        }}
       >
         <motion.div
           animate={controls}
-          initial={{ opacity: 0 }}
+          initial={{ x: "0%", opacity: 1 }}
           className="flex gap-6"
           style={{ width: "200%" }}
         >

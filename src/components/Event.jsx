@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Magnet from "./Magnet";
 
 export default function Event() {
   return (
@@ -43,12 +45,14 @@ export default function Event() {
             </p>
           </div>
           <div>
-            <a
-              href="#pricing"
-              className="inline-block bg-[#2F2723] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#F9C021] hover:text-[#2F2723] transition-all duration-300"
-            >
-              Lihat Harga Tiket
-            </a>
+            <Magnet padding={80} magnetStrength={4}>
+              <a
+                href="#pricing"
+                className="inline-block bg-[#2F2723] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#F9C021] hover:text-[#2F2723] transition-all duration-300"
+              >
+                Lihat Harga Tiket
+              </a>
+            </Magnet>
           </div>
         </div>
       </div>

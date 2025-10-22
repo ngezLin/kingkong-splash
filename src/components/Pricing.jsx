@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Magnet from "./Magnet"; // pastikan file Magnet.js kamu ada di src/components/Magnet.jsx
 
 export default function Pricing() {
   const pricing = [
@@ -79,13 +81,16 @@ export default function Pricing() {
                   ))}
                 </div>
 
-                <p className="text-sm text-[#4A403A]/80 leading-relaxed">
+                <p className="text-sm text-[#4A403A]/80 leading-relaxed mb-6">
                   {pricing.desc}
                 </p>
 
-                <button className="mt-6 px-6 py-2 bg-[#F9C021] text-[#2F2723] font-bold rounded-full hover:bg-[#2F2723] hover:text-[#F9C021] transition-colors duration-300 shadow-md">
-                  Pesan Sekarang
-                </button>
+                {/* Tombol dengan efek magnet */}
+                <Magnet padding={80} magnetStrength={4}>
+                  <button className="px-6 py-2 bg-[#F9C021] text-[#2F2723] font-bold rounded-full hover:bg-[#2F2723] hover:text-[#F9C021] transition-colors duration-300 shadow-md">
+                    Pesan Sekarang
+                  </button>
+                </Magnet>
               </div>
             </div>
           ))}

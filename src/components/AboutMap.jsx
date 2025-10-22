@@ -31,12 +31,14 @@ export default function AboutMap() {
         {/* Kolom Kanan - Map */}
         <div className="flex-1 w-full h-[350px] rounded-2xl overflow-hidden shadow-lg border-4 border-[#F9C021]">
           <iframe
-            title="King Kong Splash Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.985664367123!2d112.72836447499977!3d-7.128573492877759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780cfe48c5a3b3%3A0x8a3c9a7fcd8e6a8d!2sKing%20Kong%20Splash!5e0!3m2!1sid!2sid!4v1697743778123!5m2!1sid!2sid"
+            title="Kingkong Splash Waterpark"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.352952542932!2d112.70523997574841!3d-7.645141575629616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d98ed407f445%3A0xbc0788d114702b4d!2sKingkong%20Splash%20Waterpark!5e0!3m2!1sid!2sid!4v1761126682278!5m2!1sid!2sid"
             width="100%"
             height="100%"
-            allowFullScreen=""
+            style={{ border: 0 }}
+            allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             className="border-none"
           ></iframe>
         </div>

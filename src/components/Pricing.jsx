@@ -26,7 +26,10 @@ export default function Pricing() {
       id: 3,
       title: "Paket Keluarga",
       image: "/images/pricing3.png",
-      prices: [{ label: "2 Dewasa + 1 Anak", value: "Rp75.000" }],
+      prices: [
+        { label: "2 Dewasa + 1 Anak", value: "Rp75.000" },
+        { label: "1 Dewasa + 2 Anak", value: "Rp50.000" },
+      ],
       desc: "Paket hemat keluarga, cocok untuk bersenang-senang bersama orang tersayang.",
     },
   ];

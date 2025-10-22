@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Lanyard from "@/components/Lanyard";
 import Event from "@/components/Event";
 import Pricing from "@/components/Pricing";
 import Gallery from "@/components/Gallery";
@@ -14,12 +13,11 @@ export default function Page() {
     <main className="bg-sky-50 text-gray-800 scroll-smooth">
       <Navbar />
       <Hero />
-      {/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
       <Event />
       <Pricing />
-      {/* <Gallery /> */}
+      <Gallery />
       {/* <Merchandise /> */}
-      {/* <AboutMap /> */}
+      <AboutMap />
       {/* <Footer /> */}
       {/* <WhatsAppButton /> */}
     </main>

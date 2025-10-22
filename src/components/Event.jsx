@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function Promo() {
+export default function Event() {
   return (
     <section
-      id="promo"
+      id="event"
       className="bg-gradient-to-b from-[#FFF8E1] to-[#F9C021]/20 py-20 text-[#2F2723]"
     >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
@@ -12,7 +12,7 @@ export default function Promo() {
           <div className="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[450px] rounded-2xl overflow-hidden shadow-2xl aspect-[747/1024]">
             <Image
               src="/images/promo.png"
-              alt="Promo Natal Buy 3 Get 4"
+              alt="Event Natal Buy 3 Get 4"
               fill
               className="object-contain md:object-cover"
               sizes="(max-width: 768px) 100vw, 450px"
@@ -24,11 +24,11 @@ export default function Promo() {
         {/* Konten promo */}
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            🎄 Promo Natal Spesial 🎁
+            Promo Spesial
           </h2>
 
           <p className="text-lg md:text-xl text-[#4A403A]">
-            Rayakan Natal bersama keluarga dan teman-teman di{" "}
+            Renang bersama keluarga dan teman-teman di{" "}
             <span className="font-bold text-[#F9C021]">King Kong Splash!</span>
             <br />
             Dapatkan promo istimewa yang cuma berlaku bulan ini:

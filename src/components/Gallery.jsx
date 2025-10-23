@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 export default function Gallery() {
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.2 });
-  const positionRef = useRef(0); // posisi terakhir animasi
+  const positionRef = useRef(0);
   const requestRef = useRef(null);
   const startTimeRef = useRef(null);
   const isPausedRef = useRef(false);
@@ -25,28 +25,19 @@ export default function Gallery() {
     "/images/gal10.png",
   ];
 
-  // Fungsi animasi manual (loop halus, bisa di-pause)
   const animateLoop = (timestamp) => {
     if (!startTimeRef.current) startTimeRef.current = timestamp;
-    const elapsed = timestamp - startTimeRef.current;
-
     if (!isPausedRef.current) {
-      // Kecepatan scroll (px/ms)
       const speed = 0.05;
       positionRef.current = (positionRef.current - speed) % 50;
       controls.set({ x: `${positionRef.current}%` });
     }
-
     requestRef.current = requestAnimationFrame(animateLoop);
   };
 
   useEffect(() => {
-    if (inView) {
-      requestRef.current = requestAnimationFrame(animateLoop);
-    } else {
-      cancelAnimationFrame(requestRef.current);
-    }
-
+    if (inView) requestRef.current = requestAnimationFrame(animateLoop);
+    else cancelAnimationFrame(requestRef.current);
     return () => cancelAnimationFrame(requestRef.current);
   }, [inView]);
 
@@ -54,14 +45,14 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={ref}
-      className="relative py-16 bg-[#F9C021]/10 overflow-hidden"
+      className="relative py-20 bg-gradient-to-b from-[#E3F6F7] to-[#9CDEEE] overflow-hidden"
     >
       {/* Title */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2F2723]">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#323131]">
           Galeri King Kong Splash
         </h2>
-        <p className="text-[#2F2723]/70 mt-2">
+        <p className="text-[#323131]/70 mt-3 text-lg">
           Keseruan dan keceriaan di wahana air kami!
         </p>
       </div>
@@ -69,12 +60,8 @@ export default function Gallery() {
       {/* Gallery Animation */}
       <div
         className="relative overflow-hidden cursor-pointer"
-        onMouseEnter={() => {
-          isPausedRef.current = true;
-        }}
-        onMouseLeave={() => {
-          isPausedRef.current = false;
-        }}
+        onMouseEnter={() => (isPausedRef.current = true)}
+        onMouseLeave={() => (isPausedRef.current = false)}
       >
         <motion.div
           animate={controls}
@@ -85,7 +72,9 @@ export default function Gallery() {
           {[...images, ...images].map((src, i) => (
             <motion.div
               key={i}
-              className="min-w-[300px] h-[200px] md:min-w-[400px] md:h-[250px] relative rounded-2xl overflow-hidden shadow-lg"
+              className="min-w-[280px] h-[180px] sm:min-w-[360px] sm:h-[220px] md:min-w-[420px] md:h-[260px]
+                         relative rounded-3xl overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.1)]
+                         border border-[#6FCEDC]/40 bg-white/60 backdrop-blur-sm"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
@@ -99,6 +88,9 @@ export default function Gallery() {
           ))}
         </motion.div>
       </div>
+
+      {/* Decorative bottom blur */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#E3F6F7] to-transparent pointer-events-none" />
     </section>
   );
 }

@@ -19,7 +19,7 @@ export default function Page() {
       {/* <Lanyard /> */}
       <Merchandise />
       <AboutMap />
-      {/* <Footer /> */}
+      <Footer />
       {/* <WhatsAppButton /> */}
     </main>
   );

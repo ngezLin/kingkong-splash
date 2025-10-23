@@ -63,7 +63,7 @@ export default function Hero() {
 
         {/* Tombol CTA */}
         <Link
-          href="https://wa.me/6285336047865?text=Halo%20King%20Kong%20Splash!%20Saya%20mau%20beli%20tiketnya%20dong!"
+          href="https://wa.me/6287701044580?text=Halo%20King%20Kong%20Splash!%20Saya%20mau%20beli%20tiketnya%20dong!"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-block bg-[#6FCEDC] text-[#323131] font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#9CDEEE] hover:shadow-lg transition-all duration-300"

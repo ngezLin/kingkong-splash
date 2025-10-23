@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Jam buka */}
         <p className="mt-6 text-lg text-[#323131] font-semibold flex items-center justify-center gap-2">
-          🕒 Buka setiap hari • 08.00 – 17.00 WIB
+          🕒 Buka setiap hari • 07.00 – 17.00 WIB
         </p>
 
         {/* Tombol CTA */}

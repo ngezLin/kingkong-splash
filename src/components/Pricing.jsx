@@ -13,12 +13,14 @@ export default function Pricing() {
     },
     {
       id: 2,
-      title: "Tiket Promo",
+      title: "Promo Rombongan Sekolah",
       image: "/images/pricing2.png",
-      prices: [{ label: "Harga", value: "Rp10.000" }],
-      desc: "Liburan makin seru di akhir pekan bersama keluarga dan teman-teman!",
+      prices: [{ label: "Harga", value: "Contact Us" }],
+      desc: "Harga tiket Khusus rombongan sekolah!!",
     },
   ];
+
+  const whatsappNumber = "6287701044580";
 
   return (
     <section
@@ -31,8 +33,8 @@ export default function Pricing() {
         </h2>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2 justify-items-center">
-          {pricing.map((pricing) => (
-            <Magnet key={pricing.id} padding={100} magnetStrength={5}>
+          {pricing.map((item) => (
+            <Magnet key={item.id} padding={100} magnetStrength={5}>
               <div
                 className="group bg-white/70 backdrop-blur-md rounded-3xl w-full max-w-[360px]
                            shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden 
@@ -42,8 +44,8 @@ export default function Pricing() {
                 {/* Gambar */}
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <Image
-                    src={pricing.image}
-                    alt={pricing.title}
+                    src={item.image}
+                    alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 400px"
@@ -54,11 +56,11 @@ export default function Pricing() {
                 {/* Konten */}
                 <div className="p-6 text-center">
                   <h3 className="text-2xl font-bold mb-3 text-[#323131]">
-                    {pricing.title}
+                    {item.title}
                   </h3>
 
                   <div className="space-y-2 mb-4">
-                    {pricing.prices.map((price, idx) => (
+                    {item.prices.map((price, idx) => (
                       <p key={idx} className="text-lg font-semibold">
                         <span className="text-[#323131]">{price.label}:</span>{" "}
                         <span className="text-[#63B5D6] drop-shadow-sm">
@@ -69,13 +71,21 @@ export default function Pricing() {
                   </div>
 
                   <p className="text-sm text-[#323131]/80 leading-relaxed mb-6">
-                    {pricing.desc}
+                    {item.desc}
                   </p>
 
+                  {/* Tombol WhatsApp */}
                   <button
+                    onClick={() => {
+                      const message = `Halo kong, saya mau beli ${item.title}.`;
+                      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                        message
+                      )}`;
+                      window.open(url, "_blank");
+                    }}
                     className="px-6 py-2 bg-[#6FCEDC] text-[#323131] font-bold rounded-full
-                                     hover:bg-[#323131] hover:text-[#E3F6F7]
-                                     transition-colors duration-300 shadow-md"
+                               hover:bg-[#323131] hover:text-[#E3F6F7]
+                               transition-colors duration-300 shadow-md"
                   >
                     Pesan Sekarang
                   </button>

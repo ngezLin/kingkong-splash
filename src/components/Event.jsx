@@ -38,10 +38,10 @@ export default function Event() {
 
           <div className="bg-[#E3F6F7] rounded-2xl shadow-lg p-6 inline-block border border-[#6FCEDC]/40">
             <p className="text-2xl font-bold text-[#323131]">
-              🎟️ Beli 3 Tiket, Gratis 1 Tiket!
+              Saat ini belum ada event nih :(
             </p>
             <p className="text-sm text-[#323131]/70 mt-2">
-              Berlaku untuk semua kategori tiket selama bulan ini 🏊‍♂️
+              Tunggu event dan promosi kita selanjutnya yaa
             </p>
           </div>
 

@@ -3,6 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "King Kong Splash",
   description: "Waterpark paling seru sepandaan! 🦍💦",
+  keywords: ["waterpark Pandaan", "kolam renang Pandaan", "wahana air Pandaan"],
 };
 
 export default function RootLayout({ children }) {

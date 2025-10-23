@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "King Kong Splash",
-  description: "Waterpark paling seru untuk keluarga! 🦍💦",
+  description: "Waterpark paling seru sepandaan! 🦍💦",
 };
 
 export default function RootLayout({ children }) {

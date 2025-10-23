@@ -17,7 +17,7 @@ export default function Footer() {
           </h2>
           <p className="mt-3 text-sm text-[#E3F6F7]/80 max-w-sm leading-relaxed">
             Destinasi wisata di pandaan , dengan wahana seru, kolam bersih, dan
-            suasana menyenangkan untuk seluruh keluarga. Bisa main emel.
+            suasana menyenangkan untuk seluruh keluarga. Ownernya main emel.
           </p>
         </div>
 
@@ -29,7 +29,9 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-[#6FCEDC]" />
-              <span>Jl. Raya Mojosari No.123, Mojokerto</span>
+              <span>
+                Jalan Pahlawan Prof. Sunaryo No.9, Mbajang. Pandaan, Pasuruan{" "}
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <FaWhatsapp className="text-[#6FCEDC]" />

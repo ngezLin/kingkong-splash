@@ -34,7 +34,7 @@ export default function Pricing() {
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2 justify-items-center">
           {pricing.map((item) => (
-            <Magnet key={item.id} padding={100} magnetStrength={5}>
+            <Magnet key={item.id} padding={100} magnetStrength={8}>
               <div
                 className="group bg-white/70 backdrop-blur-md rounded-3xl w-full max-w-[360px]
                            shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden 

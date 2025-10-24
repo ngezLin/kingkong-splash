@@ -10,7 +10,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex flex-col items-center justify-start pt-40 bg-[#E3F6F7] overflow-hidden"
+      className="relative min-h-[100svh] flex flex-col items-center justify-center pt-24 md:pt-40 bg-[#E3F6F7] overflow-hidden"
+      // className="relative min-h-[100svh] flex flex-col items-center justify-center bg-[#E3F6F7] overflow-hidden"
     >
       {/* Background Image */}
       <Image
@@ -25,10 +26,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#323131]/20 backdrop-blur-[2px]" />
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-6">
         {/* Animasi Teks */}
         <h1
-          className="text-6xl md:text-7xl font-extrabold flex justify-center drop-shadow-lg"
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold flex justify-center drop-shadow-lg flex-wrap"
           style={{
             color: "#E3F6F7",
             WebkitTextStroke: "2px #63B5D6",
@@ -52,12 +53,12 @@ export default function Hero() {
         </h1>
 
         {/* Subtext */}
-        <p className="mt-4 text-xl md:text-2xl text-[#323131] font-medium">
+        <p className="mt-4 text-lg sm:text-xl md:text-2xl text-[#323131] font-medium">
           Serunya berenang bareng keluarga!
         </p>
 
         {/* Jam buka */}
-        <p className="mt-6 text-lg text-[#323131] font-semibold flex items-center justify-center gap-2">
+        <p className="mt-6 text-base sm:text-lg text-[#323131] font-semibold flex items-center justify-center gap-2">
           🕒 Buka setiap hari • 07.00 – 17.00 WIB
         </p>
 

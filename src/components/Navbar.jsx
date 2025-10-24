@@ -56,7 +56,7 @@ export default function Navbar() {
             alt="King Kong Splash Logo"
             width={120}
             height={50}
-            className="object-contain"
+            className="w-full h-auto object-cover"
             priority
           />
         </a>

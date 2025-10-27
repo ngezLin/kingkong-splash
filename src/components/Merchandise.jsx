@@ -44,7 +44,7 @@ export default function Merchandise() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-extrabold mb-10 drop-shadow-lg text-[#2C7DA0]"
           >
-            Merchandise Resmi 🎁
+            Merchandise Resmi
           </motion.h2>
 
           {/* Grid Barang */}

@@ -80,11 +80,11 @@ export default function Gallery() {
         }
 
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 5s linear infinite;
         }
 
         .animate-scroll-reverse {
-          animation: scroll-reverse 30s linear infinite;
+          animation: scroll-reverse 5s linear infinite;
         }
       `}</style>
     </section>

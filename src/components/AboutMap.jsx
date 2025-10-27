@@ -16,7 +16,7 @@ export default function AboutMap() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-              📍 Tentang Kami & Lokasi
+              Tentang Kami & Lokasi
             </h2>
             <p className="text-[#323131]/70 max-w-3xl mx-auto">
               <b className="text-[#63B5D6]">King Kong Splash Waterpark</b>{" "}

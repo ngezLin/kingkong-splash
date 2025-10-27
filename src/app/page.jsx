@@ -10,7 +10,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Page() {
   return (
-    <main className="bg-sky-50 text-gray-800 scroll-smooth">
+    <main className="min-h-screen text-gray-800 scroll-smooth bg-linear-to-b from-[#E3F6F7] via-[#9CDEEE]/40 to-[#E3F6F7]">
       <Navbar />
       <Hero />
       <Event />

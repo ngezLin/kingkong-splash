@@ -23,10 +23,7 @@ export default function Pricing() {
   const whatsappNumber = "6287701044580";
 
   return (
-    <section
-      id="pricing"
-      className="bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE] py-20 text-[#323131]"
-    >
+    <section id="pricing" className="py-20 text-[#323131]">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-extrabold mb-16 text-center text-[#323131]">
           Harga Tiket & Promo

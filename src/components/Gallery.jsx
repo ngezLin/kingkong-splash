@@ -18,10 +18,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section
-      id="gallery"
-      className="relative py-20 bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE]/60 overflow-hidden"
-    >
+    <section id="gallery" className="relative py-20 overflow-hidden">
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#323131]">

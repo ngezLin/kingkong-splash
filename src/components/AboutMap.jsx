@@ -5,7 +5,7 @@ export default function AboutMap() {
   return (
     <section
       id="about"
-      className="relative bg-gradient-to-b from-[#9CDEEE]/40 to-[#E3F6F7] py-20 text-[#323131] overflow-hidden"
+      className="relative py-20 text-[#323131] overflow-hidden"
     >
       <div className="container mx-auto px-6">
         <AnimatedContent
@@ -36,7 +36,7 @@ export default function AboutMap() {
             duration={1}
             delay={0.4}
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg h-full">
+            <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-lg h-full">
               <h3 className="text-2xl font-bold mb-4 text-[#63B5D6]">
                 Kunjungi Kami
               </h3>
@@ -76,7 +76,7 @@ export default function AboutMap() {
             duration={1}
             delay={0.6}
           >
-            <div className="rounded-2xl overflow-hidden shadow-lg w-full aspect-[16/9] md:aspect-auto md:h-[400px]">
+            <div className="rounded-2xl overflow-hidden shadow-lg w-full aspect-video md:aspect-auto md:h-[400px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.352952542932!2d112.70523997574841!3d-7.645141575629616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d98ed407f445%3A0xbc0788d114702b4d!2sKingkong%20Splash%20Waterpark!5e0!3m2!1sid!2sid!4v1761126682278!5m2!1sid!2sid"
                 className="w-full h-full border-0"

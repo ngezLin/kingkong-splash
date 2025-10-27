@@ -33,22 +33,8 @@ export default function Merchandise() {
       id="merchandise"
       className="relative text-[#323131] overflow-hidden"
     >
-      {/* Wave Atas */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-        <svg
-          className="relative block w-[calc(100%+1.3px)] h-16 sm:h-20 text-[#E3F6F7]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44C213.55,83.12,107.78,116.4,0,120V0H1200V120C1074.19,116.4,946.4,85.58,821.74,56.44,696.28,27,571.77,-1.52,447.16,2.47,405.94,3.78,364.35,13.1,321.39,56.44Z"
-            fill="currentColor"
-          ></path>
-        </svg>
-      </div>
-
-      <div className="bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE]/40 py-20 relative z-10">
+      {/* Konten */}
+      <div className="py-20 relative z-10">
         <div className="container mx-auto px-6 text-center">
           {/* Judul */}
           <motion.h2
@@ -92,21 +78,6 @@ export default function Merchandise() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Wave Bawah */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          className="relative block w-[calc(100%+1.3px)] h-16 sm:h-20 text-[#9CDEEE]/40"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44C213.55,83.12,107.78,116.4,0,120V0H1200V120C1074.19,116.4,946.4,85.58,821.74,56.44,696.28,27,571.77,-1.52,447.16,2.47,405.94,3.78,364.35,13.1,321.39,56.44Z"
-            fill="currentColor"
-          ></path>
-        </svg>
       </div>
     </section>
   );

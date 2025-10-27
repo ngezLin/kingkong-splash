@@ -6,7 +6,7 @@ export default function Event() {
   return (
     <section
       id="event"
-      className="bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE]/30 py-20 text-[#323131]"
+      className="py-20 text-[#323131]" // ← di sini hapus bg-linear-to-b
     >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Gambar promo */}
@@ -41,7 +41,7 @@ export default function Event() {
               Saat ini belum ada event nih :(
             </p>
             <p className="text-sm text-[#323131]/70 mt-2">
-              Tunggu event dan promosi kita selanjutnya yaa
+              Tunggu event dan promosi kita selanjutnya yaa
             </p>
           </div>
 

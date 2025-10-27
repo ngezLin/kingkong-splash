@@ -16,11 +16,9 @@ export default function Page() {
       <Event />
       <Pricing />
       <Gallery />
-      {/* <Lanyard /> */}
       <Merchandise />
-      <AboutMap />
+      {/* <AboutMap /> */}
       <Footer />
-      {/* <WhatsAppButton /> */}
     </main>
   );
 }

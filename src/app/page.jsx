@@ -15,7 +15,7 @@ export default function Page() {
       <Hero />
       <Event />
       <Pricing />
-      {/* <Gallery /> */}
+      <Gallery />
       {/* <Merchandise /> */}
       {/* <AboutMap /> */}
       {/* <Footer /> */}

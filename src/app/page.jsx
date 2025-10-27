@@ -13,12 +13,12 @@ export default function Page() {
     <main className="bg-sky-50 text-gray-800 scroll-smooth">
       <Navbar />
       <Hero />
-      <Event />
+      {/* <Event />
       <Pricing />
       <Gallery />
       <Merchandise />
       <AboutMap />
-      {/* <Footer /> */}
+      <Footer /> */}
     </main>
   );
 }

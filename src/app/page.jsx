@@ -17,8 +17,8 @@ export default function Page() {
       <Pricing />
       <Gallery />
       <Merchandise />
-      {/* <AboutMap /> */}
-      <Footer />
+      <AboutMap />
+      {/* <Footer /> */}
     </main>
   );
 }

@@ -10,8 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex flex-col items-center justify-center pt-24 md:pt-40 bg-[#E3F6F7] overflow-hidden"
-      // className="relative min-h-[100svh] flex flex-col items-center justify-center bg-[#E3F6F7] overflow-hidden"
+      className="relative min-h-svh flex flex-col items-center justify-center pt-24 md:pt-40 bg-[#E3F6F7] overflow-hidden"
     >
       {/* Background Image */}
       <Image
@@ -31,8 +30,7 @@ export default function Hero() {
         <h1
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold flex justify-center drop-shadow-lg flex-wrap"
           style={{
-            color: "#E3F6F7",
-            WebkitTextStroke: "2px #63B5D6",
+            color: "White",
           }}
         >
           {letters.map((char, i) => (
@@ -53,12 +51,12 @@ export default function Hero() {
         </h1>
 
         {/* Subtext */}
-        <p className="mt-4 text-lg sm:text-xl md:text-2xl text-[#323131] font-medium">
+        <p className="mt-4 text-lg sm:text-xl md:text-2xl text-[#ffffff] font-medium">
           Serunya berenang bareng keluarga!
         </p>
 
         {/* Jam buka */}
-        <p className="mt-6 text-base sm:text-lg text-[#323131] font-semibold flex items-center justify-center gap-2">
+        <p className="mt-6 text-base sm:text-lg text-[#ffffff] font-semibold flex items-center justify-center gap-2">
           🕒 Buka setiap hari • 07.00 – 17.00 WIB
         </p>
 
@@ -67,7 +65,7 @@ export default function Hero() {
           href="https://wa.me/6287701044580?text=Halo%20King%20Kong%20Splash!%20Saya%20mau%20beli%20tiketnya%20dong!"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block bg-[#6FCEDC] text-[#323131] font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#9CDEEE] hover:shadow-lg transition-all duration-300"
+          className="mt-8 inline-block bg-[#6FCEDC] text-[#ffffff] font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#9CDEEE] hover:shadow-lg transition-all duration-300"
         >
           Pesan Tiket Sekarang
         </Link>

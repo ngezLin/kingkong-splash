@@ -6,12 +6,12 @@ export default function Event() {
   return (
     <section
       id="event"
-      className="bg-gradient-to-b from-[#E3F6F7] to-[#9CDEEE]/30 py-20 text-[#323131]"
+      className="bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE]/30 py-20 text-[#323131]"
     >
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Gambar promo */}
-        <div className="relative w-full md:w-1/2 flex justify-center order-1 md:order-none">
-          <div className="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[450px] rounded-2xl overflow-hidden shadow-2xl aspect-[747/1024] border-4 border-[#63B5D6]/40">
+        <div className="relative w-full md:w-1/2 flex justify-center order-1 md:order-0">
+          <div className="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[450px] rounded-2xl overflow-hidden shadow-2xl aspect-747/1024 border-4 border-[#63B5D6]/40">
             <Image
               src="/images/promo.png"
               alt="Event Spesial King Kong Splash"
@@ -26,7 +26,7 @@ export default function Event() {
         {/* Konten promo */}
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-[#323131]">
-            Promo Spesial 💦
+            Event & Promotion
           </h2>
 
           <p className="text-lg md:text-xl text-[#323131]/90">

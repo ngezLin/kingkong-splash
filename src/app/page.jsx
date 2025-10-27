@@ -16,7 +16,7 @@ export default function Page() {
       <Event />
       <Pricing />
       <Gallery />
-      {/* <Merchandise /> */}
+      <Merchandise />
       <AboutMap />
       <Footer />
     </main>

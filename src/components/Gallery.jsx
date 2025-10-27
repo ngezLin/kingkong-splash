@@ -1,20 +1,26 @@
 "use client";
-import CircularGallery from "./CircularGallery";
+import Image from "next/image";
 
 export default function Gallery() {
-  const images = [
-    { image: "/images/gal1.png", text: "Overview" },
-    { image: "/images/gal2.png", text: "Model Kingkong" },
-    { image: "/images/gal3.png", text: "Model luar" },
-    { image: "/images/gal4.png", text: "apalah ini" },
-    { image: "/images/gal5.png", text: "Kolam renang" },
-    { image: "/images/gal6.png", text: "candid" },
+  const row1 = [
+    "/images/gal1.png",
+    "/images/gal2.png",
+    "/images/gal3.png",
+    "/images/gal4.png",
+    "/images/gal5.png",
+  ];
+  const row2 = [
+    "/images/gal6.png",
+    "/images/gal7.png",
+    "/images/gal8.png",
+    "/images/gal9.png",
+    "/images/gal10.png",
   ];
 
   return (
     <section
       id="gallery"
-      className="relative py-20 bg-gradient-to-b from-[#E3F6F7] to-[#9CDEEE] overflow-hidden"
+      className="relative py-20 bg-linear-to-b from-[#E3F6F7] to-[#9CDEEE]/60 overflow-hidden"
     >
       {/* Title */}
       <div className="text-center mb-12">
@@ -26,16 +32,64 @@ export default function Gallery() {
         </p>
       </div>
 
-      {/* Circular Gallery */}
-      <div style={{ height: "600px", position: "relative" }}>
-        <CircularGallery
-          items={images}
-          bend={3}
-          textColor="#323131"
-          borderRadius={0.05}
-          scrollEase={0.02}
-        />
+      {/* Auto-scroll Container */}
+      <div className="space-y-10">
+        {/* Baris 1 */}
+        <div className="overflow-hidden">
+          <div className="flex animate-scroll gap-6">
+            {[...row1, ...row1].map((src, i) => (
+              <div
+                key={i}
+                className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
+              >
+                <Image src={src} alt="Gallery" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* baris 2 */}
+        <div className="overflow-hidden">
+          <div className="flex animate-scroll-reverse gap-6">
+            {[...row2, ...row2].map((src, i) => (
+              <div
+                key={i}
+                className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
+              >
+                <Image src={src} alt="Gallery" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scroll-reverse {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+
+        .animate-scroll-reverse {
+          animation: scroll-reverse 30s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

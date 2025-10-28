@@ -47,6 +47,7 @@ export default function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 16rem" // <-- Tambahan sizes
                   className="object-cover"
                 />
               </div>
@@ -66,6 +67,7 @@ export default function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 16rem" // <-- Tambahan sizes
                   className="object-cover"
                 />
               </div>

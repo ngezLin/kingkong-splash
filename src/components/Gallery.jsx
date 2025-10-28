@@ -18,7 +18,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="relative py-20 overflow-hidden">
+    <section id="gallery" className="relative py-20 overflow-hidden bg-white">
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#323131]">
@@ -33,27 +33,37 @@ export default function Gallery() {
       <div className="space-y-10">
         {/* Baris 1 */}
         <div className="overflow-hidden">
-          <div className="flex animate-scroll gap-6">
+          <div className="flex gap-6 animate-scroll">
             {[...row1, ...row1].map((src, i) => (
               <div
                 key={i}
                 className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
               >
-                <Image src={src} alt="Gallery" fill className="object-cover" />
+                <Image
+                  src={src}
+                  alt={`Gallery ${i}`}
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
         </div>
 
-        {/* baris 2 */}
+        {/* Baris 2 */}
         <div className="overflow-hidden">
-          <div className="flex animate-scroll-reverse gap-6">
+          <div className="flex gap-6 animate-scroll-reverse">
             {[...row2, ...row2].map((src, i) => (
               <div
                 key={i}
                 className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
               >
-                <Image src={src} alt="Gallery" fill className="object-cover" />
+                <Image
+                  src={src}
+                  alt={`Gallery ${i}`}
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
@@ -80,11 +90,13 @@ export default function Gallery() {
         }
 
         .animate-scroll {
-          animation: scroll 5s linear infinite;
+          width: max-content;
+          animation: scroll 40s linear infinite;
         }
 
         .animate-scroll-reverse {
-          animation: scroll-reverse 5s linear infinite;
+          width: max-content;
+          animation: scroll-reverse 40s linear infinite;
         }
       `}</style>
     </section>

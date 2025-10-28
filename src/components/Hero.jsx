@@ -59,8 +59,9 @@ export default function Hero() {
         {/* Deskripsi tambahan */}
         <p className="mt-4 text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto">
           King Kong Splash adalah kolam renang dan wahana air terbaik di
-          Pandaan, Pasuruan. Cocok untuk keluarga dan anak-anak, dengan wahana
-          seru seperti seluncuran raksasa, kolam anak, dan area bermain air.
+          Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan area
+          bermain air yang seru untuk keluarga. Cocok untuk wisata keluarga dan
+          liburan anak-anak.
         </p>
 
         {/* Jam buka */}

@@ -1,5 +1,6 @@
 "use client";
 import AnimatedContent from "./AnimatedContent";
+import Script from "next/script";
 
 export default function AboutMap() {
   return (
@@ -8,6 +9,7 @@ export default function AboutMap() {
       className="relative py-20 text-[#323131] overflow-hidden"
     >
       <div className="container mx-auto px-6">
+        {/* Header */}
         <AnimatedContent
           distance={100}
           direction="vertical"
@@ -20,10 +22,10 @@ export default function AboutMap() {
             </h2>
             <p className="text-[#323131]/70 max-w-3xl mx-auto">
               <b className="text-[#63B5D6]">King Kong Splash Waterpark</b>{" "}
-              adalah destinasi wisata air terbaik yang menawarkan pengalaman
-              seru dan menyegarkan untuk seluruh keluarga. Dengan berbagai
-              wahana air yang menantang dan fasilitas modern, kami siap
-              memberikan kenangan tak terlupakan untuk Anda.
+              adalah kolam renang dan wahana air terbaik di Pandaan, Pasuruan.
+              Nikmati seluncuran raksasa, kolam anak, dan area bermain air yang
+              menyenangkan untuk seluruh keluarga. Tempat ini cocok untuk
+              liburan keluarga dan wisata anak-anak di Jawa Timur.
             </p>
           </div>
         </AnimatedContent>
@@ -43,7 +45,10 @@ export default function AboutMap() {
               <div className="space-y-4 text-[#323131]/80">
                 <div>
                   <h4 className="font-semibold text-lg mb-2">📌 Alamat:</h4>
-                  <p>Kingkong Splash Waterpark, Surabaya, Jawa Timur</p>
+                  <p>
+                    Jalan Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris, Kec.
+                    Pandaan, Pasuruan, Jawa Timur 67156
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">
@@ -89,6 +94,53 @@ export default function AboutMap() {
           </AnimatedContent>
         </div>
       </div>
+
+      {/* Schema LocalBusiness */}
+      <Script type="application/ld+json" id="local-business-schema">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "King Kong Splash Waterpark",
+          image: "https://kolamrenangkingkong.com/images/hero.webp",
+          url: "https://kolamrenangkingkong.com",
+          telephone: "+6287701044580",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "Jalan Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris, Kec. Pandaan, Pasuruan, Jawa Timur 67156",
+            addressLocality: "Pandaan",
+            addressRegion: "Pasuruan",
+            postalCode: "67156",
+            addressCountry: "ID",
+          },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ],
+              opens: "07:00",
+              closes: "17:00",
+            },
+          ],
+          priceRange: "Rp.15,000",
+          sameAs: [
+            "https://www.facebook.com/kingkongsplash",
+            "https://www.instagram.com/kingkongsplash",
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            reviewCount: "125",
+          },
+        })}
+      </Script>
     </section>
   );
 }

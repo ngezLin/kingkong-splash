@@ -1,13 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
 export default function Hero() {
-  const text = "King Kong Splash";
-  const letters = text.split("");
-
   return (
     <section
       id="hero"
@@ -16,57 +12,32 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/images/hero.webp"
-        alt="Kolam Renang King Kong Splash Pandaan"
+        alt="Kolam Renang King Kong Splash Pandaan - Seluncuran Raksasa & Wahana Air"
         fill
         className="object-cover opacity-80"
         priority
       />
 
-      {/* Overlay lembut agar teks terbaca jelas */}
+      {/* Overlay lembut */}
       <div className="absolute inset-0 bg-[#323131]/20 backdrop-blur-[2px]" />
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6">
-        {/* SEO fallback */}
-        <h1 className="sr-only">
-          King Kong Splash - Kolam Renang & Wahana Air di Pandaan
+        {/* Judul utama H1 */}
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+          King Kong Splash
         </h1>
-
-        {/* Animasi Teks */}
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold flex justify-center drop-shadow-lg flex-wrap text-white">
-          {letters.map((char, i) => (
-            <motion.span
-              key={i}
-              initial={{ y: 80, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: i * 0.05,
-                duration: 0.6,
-                type: "spring",
-                stiffness: 200,
-              }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </h2>
 
         {/* Subtext */}
         <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-medium">
           Serunya berenang bareng keluarga!
         </p>
 
-        {/* Deskripsi tambahan */}
+        {/* Deskripsi singkat */}
         <p className="mt-4 text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto">
           King Kong Splash adalah kolam renang dan wahana air terbaik di
           Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan area
-          bermain air yang seru untuk keluarga. Cocok untuk wisata keluarga dan
-          liburan anak-anak.
-        </p>
-
-        {/* Jam buka */}
-        <p className="mt-6 text-base sm:text-lg text-white font-semibold flex items-center justify-center gap-2">
-          🕒 Buka setiap hari • 07.00 – 17.00 WIB
+          bermain air yang seru untuk keluarga.
         </p>
 
         {/* Tombol CTA */}

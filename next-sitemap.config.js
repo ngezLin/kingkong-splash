@@ -1,8 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://kolamrenangkingkong.com", // ganti sesuai domainmu
+  siteUrl: "https://kolamrenangkingkong.com",
   generateRobotsTxt: true,
-  sitemapSize: 5000,
   changefreq: "weekly",
-  priority: 0.7,
+  priority: 0.8,
+  sitemapSize: 5000,
 };

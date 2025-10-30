@@ -5,5 +5,5 @@ Allow: /
 # Host
 Host: https://kolamrenangkingkong.com
 
-# Sitemaps
+# Sitemap
 Sitemap: https://kolamrenangkingkong.com/sitemap.xml

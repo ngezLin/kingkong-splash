@@ -1,11 +1,9 @@
-# robots.txt for https://kolamrenangkingkong.com
-
+# *
 User-agent: *
 Allow: /
 
-# Disallow sensitive paths (kalau ada)
-Disallow: /admin/
-Disallow: /api/
+# Host
+Host: https://kolamrenangkingkong.com
 
-# Sitemap location
+# Sitemaps
 Sitemap: https://kolamrenangkingkong.com/sitemap.xml

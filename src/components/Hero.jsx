@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/images/hero.webp"
-        alt="Kolam Renang King Kong Splash Pandaan - Seluncuran Raksasa & Wahana Air"
+        alt="Kolam Renang King Kong Splash Pandaan - Wahana Air Keluarga dan Seluncuran Raksasa"
         fill
         className="object-cover opacity-80"
         priority
@@ -25,19 +25,20 @@ export default function Hero() {
       <div className="relative z-10 text-center px-6">
         {/* Judul utama H1 */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
-          King Kong Splash
+          King Kong Splash – Kolam Renang & Wahana Air Terbaik di Pandaan
         </h1>
 
         {/* Subtext */}
         <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-medium">
-          Serunya berenang bareng keluarga!
+          Tempat liburan keluarga seru di <strong>Pandaan</strong>!
         </p>
 
         {/* Deskripsi singkat */}
         <p className="mt-4 text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto">
-          King Kong Splash adalah kolam renang dan wahana air terbaik di
-          Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan area
-          bermain air yang seru untuk keluarga.
+          Nikmati keseruan bermain air di <strong>King Kong Splash</strong> —
+          <strong> kolam renang Pandaan</strong> dengan seluncuran raksasa,
+          kolam anak, dan area bermain keluarga. Pilihan terbaik untuk
+          <strong> wisata keluarga di Pasuruan dan Pandaan</strong>.
         </p>
 
         {/* Tombol CTA */}

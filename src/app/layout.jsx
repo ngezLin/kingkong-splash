@@ -7,7 +7,7 @@ export const metadata = {
   },
   description:
     "Nikmati keseruan di King Kong Splash — kolam renang dan wahana air keluarga terbaik di Pandaan. Tempat liburan seru untuk anak dan keluarga!",
-  metadataBase: new URL("https://kolamrenangkingkong.com"), // <-- tambahkan ini
+  metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
     "King Kong Splash",
     "kingkongsplash",
@@ -52,6 +52,11 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://kolamrenangkingkong.com",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

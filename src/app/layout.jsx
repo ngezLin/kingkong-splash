@@ -60,9 +60,9 @@ export const metadata = {
     canonical: "https://kolamrenangkingkong.com",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/favicon.ico",      // favicon default untuk browser tab
+    shortcut: "/favicon.ico",  // untuk shortcut/bookmark
+    apple: "/favicon.ico",     // untuk Apple Touch
   },
   themeColor: "#6FCEDC",
 };
@@ -70,7 +70,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className="antialiased bg-sky-50 text-gray-800">{children}</body>
+      <body className="antialiased bg-sky-50 text-gray-800">
+        {children}
+      </body>
     </html>
   );
 }

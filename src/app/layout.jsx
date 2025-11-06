@@ -15,16 +15,9 @@ export const metadata = {
     "kolam renang",
     "kolam renang Pandaan",
     "kolam renang Kingkong",
-    "Kingkong Waterpark",
-    "Kingkong Splash Waterpark",
     "wahana air Pandaan",
-    "wahana air keluarga",
     "tempat wisata Pandaan",
-    "liburan di Pandaan",
     "kolam renang sekitar",
-    "wisata keluarga Pasuruan",
-    "tempat seru Pandaan",
-    "wahana anak Pandaan",
     "liburan keluarga Jawa Timur",
     "King Kong Splash Waterpark Pandaan",
   ],
@@ -60,9 +53,9 @@ export const metadata = {
     canonical: "https://kolamrenangkingkong.com",
   },
   icons: {
-    icon: "/favicon.ico",      // favicon default untuk browser tab
-    shortcut: "/favicon.ico",  // untuk shortcut/bookmark
-    apple: "/favicon.ico",     // untuk Apple Touch
+    icon: "/favicon.ico", // favicon default untuk browser tab
+    shortcut: "/favicon.ico", // untuk shortcut/bookmark
+    apple: "/favicon.ico", // untuk Apple Touch
   },
   themeColor: "#6FCEDC",
 };
@@ -70,9 +63,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className="antialiased bg-sky-50 text-gray-800">
-        {children}
-      </body>
+      <body className="antialiased bg-sky-50 text-gray-800">{children}</body>
     </html>
   );
 }

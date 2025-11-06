@@ -20,13 +20,13 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="relative py-20 overflow-hidden bg-white">
+    <section id="gallery" className="relative py-20 overflow-hidden">
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#323131]">
           Galeri King Kong Splash
         </h2>
-        <p className="text-[#323131]/70 mt-3 text-lg max-w-3xl mx-auto">
+        <p className="text-[#323131]/70 mt-3 text-lg max-w-3xl mx-auto px-6">
           Lihat keseruan di King Kong Splash Waterpark Pandaan! Dari seluncuran
           raksasa hingga kolam anak, semua wahana air kami siap memberikan
           pengalaman seru untuk seluruh keluarga.
@@ -35,10 +35,11 @@ export default function Gallery() {
 
       {/* Auto-scroll Container */}
       <div className="space-y-10">
-        {/* Baris 1 */}
+        {/* Baris 1 - Scroll to Left */}
         <div className="overflow-hidden">
-          <div className="flex gap-6 animate-scroll">
-            {[...row1, ...row1].map((item, i) => (
+          <div className="flex gap-6 animate-scroll-left">
+            {/* Triple the array for seamless loop */}
+            {[...row1, ...row1, ...row1].map((item, i) => (
               <div
                 key={i}
                 className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
@@ -47,7 +48,7 @@ export default function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(max-width: 768px) 100vw, 16rem" // <-- Tambahan sizes
+                  sizes="(max-width: 768px) 100vw, 16rem"
                   className="object-cover"
                 />
               </div>
@@ -55,10 +56,11 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Baris 2 */}
+        {/* Baris 2 - Scroll to Right */}
         <div className="overflow-hidden">
-          <div className="flex gap-6 animate-scroll-reverse">
-            {[...row2, ...row2].map((item, i) => (
+          <div className="flex gap-6 animate-scroll-right">
+            {/* Triple the array for seamless loop */}
+            {[...row2, ...row2, ...row2].map((item, i) => (
               <div
                 key={i}
                 className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
@@ -67,7 +69,7 @@ export default function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(max-width: 768px) 100vw, 16rem" // <-- Tambahan sizes
+                  sizes="(max-width: 768px) 100vw, 16rem"
                   className="object-cover"
                 />
               </div>
@@ -76,31 +78,36 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* CSS Scroll Animasi */}
+      {/* CSS Scroll Animation - Seamless Loop */}
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes scroll-left {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-100% / 3));
           }
         }
-        @keyframes scroll-reverse {
+        @keyframes scroll-right {
           0% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-100% / 3));
           }
           100% {
             transform: translateX(0);
           }
         }
-        .animate-scroll {
+        .animate-scroll-left {
           width: max-content;
-          animation: scroll 40s linear infinite;
+          animation: scroll-left 60s linear infinite;
         }
-        .animate-scroll-reverse {
+        .animate-scroll-right {
           width: max-content;
-          animation: scroll-reverse 40s linear infinite;
+          animation: scroll-right 60s linear infinite;
+        }
+        /* Pause on hover */
+        .animate-scroll-left:hover,
+        .animate-scroll-right:hover {
+          animation-play-state: paused;
         }
       `}</style>
 

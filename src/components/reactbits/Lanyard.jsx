@@ -2,13 +2,7 @@
 "use client";
 import { useEffect, useRef, useState, Suspense } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import {
-  useGLTF,
-  useTexture,
-  Environment,
-  Lightformer,
-  Html,
-} from "@react-three/drei";
+import { useGLTF, useTexture, Environment, Html } from "@react-three/drei";
 import {
   BallCollider,
   CuboidCollider,
@@ -164,6 +158,17 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+    }
+
+    // --- AUTO ROTATE LOGIC ---
+    if (!dragged && card.current) {
+      const autoSpeed = 0.5; // kecepatan rotasi
+      const rotation = card.current.rotation();
+      card.current.setRotation({
+        x: rotation.x,
+        y: rotation.y + delta * autoSpeed,
+        z: rotation.z,
+      });
     }
   });
 

@@ -18,7 +18,7 @@ export const metadata = {
     "wahana air Pandaan",
     "tempat wisata Pandaan",
     "kolam renang sekitar",
-    "liburan keluarga Jawa Timur",
+    "kolam renang king kong pandaan",
     "King Kong Splash Waterpark Pandaan",
   ],
   openGraph: {
@@ -53,20 +53,37 @@ export const metadata = {
     canonical: "https://kolamrenangkingkong.com",
   },
   icons: {
-    icon: "/favicon.ico", // favicon default untuk browser tab
-    shortcut: "/favicon.ico", // untuk shortcut/bookmark
-    apple: "/favicon.ico", // untuk Apple Touch
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "icon",
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
   },
+  manifest: "/site.webmanifest",
   themeColor: "#6FCEDC",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body className="antialiased bg-sky-50 text-gray-800">{children}</body>
     </html>
   );

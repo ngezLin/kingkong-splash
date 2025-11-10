@@ -14,9 +14,9 @@ export default function Page() {
     <main className="min-h-screen text-gray-800 scroll-smooth bg-linear-to-b from-[#E3F6F7] via-[#9CDEEE]/40 to-[#E3F6F7]">
       <Navbar />
       <Hero />
-      <Description />
       <Event />
       <Pricing />
+      <Description />
       <Gallery />
       <Merchandise />
       <AboutMap />

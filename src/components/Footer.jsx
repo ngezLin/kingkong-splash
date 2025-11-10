@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Logo dan Deskripsi */}
         <div className="flex-1">
           <h2 className="text-2xl font-extrabold text-[#6FCEDC]">
-            King Kong Splash
+            King Kong Splash Waterpark
           </h2>
           <p className="mt-3 text-sm text-[#E3F6F7]/80 max-w-sm leading-relaxed">
             Destinasi wisata di pandaan , dengan wahana seru, kolam bersih, dan

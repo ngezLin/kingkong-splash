@@ -20,65 +20,82 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="relative py-20 overflow-hidden">
-      {/* Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#323131]">
-          Galeri King Kong Splash
-        </h2>
-        <p className="text-[#323131]/70 mt-3 text-lg max-w-3xl mx-auto px-6">
-          Lihat keseruan di King Kong Splash Waterpark Pandaan! Dari seluncuran
-          raksasa hingga kolam anak, semua wahana air kami siap memberikan
-          pengalaman seru untuk seluruh keluarga.
-        </p>
+    <section
+      id="gallery"
+      className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+    >
+      {/* === Animated Background Elements === */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Cyan Orbs */}
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div
+          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+
+        {/* Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
 
-      {/* Auto-scroll Container */}
-      <div className="space-y-10">
-        {/* Baris 1 - Scroll to Left */}
-        <div className="overflow-hidden">
-          <div className="flex gap-6 animate-scroll-left">
-            {/* Triple the array for seamless loop */}
-            {[...row1, ...row1, ...row1].map((item, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 16rem"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+      {/* === Content === */}
+      <div className="relative z-10">
+        {/* Title */}
+        <div className="text-center mb-12 px-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+            Galeri King Kong Splash
+          </h2>
+          <p className="text-slate-300 mt-3 text-lg max-w-3xl mx-auto">
+            Lihat keseruan di King Kong Splash Waterpark Pandaan! Dari
+            seluncuran raksasa hingga kolam anak, semua wahana air kami siap
+            memberikan pengalaman seru untuk seluruh keluarga.
+          </p>
         </div>
 
-        {/* Baris 2 - Scroll to Right */}
-        <div className="overflow-hidden">
-          <div className="flex gap-6 animate-scroll-right">
-            {/* Triple the array for seamless loop */}
-            {[...row2, ...row2, ...row2].map((item, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 16rem"
-                  className="object-cover"
-                />
-              </div>
-            ))}
+        {/* Auto-scroll Container */}
+        <div className="space-y-10">
+          {/* Baris 1 - Scroll to Left */}
+          <div className="overflow-hidden">
+            <div className="flex gap-6 animate-scroll-left">
+              {[...row1, ...row1, ...row1].map((item, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg border border-white/10 bg-slate-800/40 backdrop-blur-sm"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 16rem"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Baris 2 - Scroll to Right */}
+          <div className="overflow-hidden">
+            <div className="flex gap-6 animate-scroll-right">
+              {[...row2, ...row2, ...row2].map((item, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg border border-white/10 bg-slate-800/40 backdrop-blur-sm"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 16rem"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* CSS Scroll Animation - Seamless Loop */}
+      {/* CSS Scroll Animation */}
       <style jsx>{`
         @keyframes scroll-left {
           0% {
@@ -104,7 +121,6 @@ export default function Gallery() {
           width: max-content;
           animation: scroll-right 60s linear infinite;
         }
-        /* Pause on hover */
         .animate-scroll-left:hover,
         .animate-scroll-right:hover {
           animation-play-state: paused;

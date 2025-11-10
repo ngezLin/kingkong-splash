@@ -61,7 +61,7 @@ export default function Navbar() {
           : "bg-transparent backdrop-blur-none border-none shadow-none"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-6 py-4 text-[#323131]">
+      <div className="container mx-auto flex justify-between items-center px-6 py-2  text-[#323131]">
         {/* Logo */}
         <a
           href="#hero"
@@ -71,8 +71,8 @@ export default function Navbar() {
           <Image
             src="/images/logo1.png"
             alt="King Kong Splash Logo"
-            width={120}
-            height={50}
+            width={60}
+            height={200}
             className="w-full h-auto object-cover"
             priority
           />
@@ -88,7 +88,7 @@ export default function Navbar() {
               className={`transition-colors duration-300 ${
                 activeSection === item.id
                   ? "text-[#63B5D6]"
-                  : "text-[#323131] hover:text-[#6FCEDC]"
+                  : "text-[#000000] hover:text-[#6FCEDC]"
               }`}
             >
               {item.label}
@@ -101,7 +101,7 @@ export default function Navbar() {
           className="md:hidden focus:outline-none text-[#323131]"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 

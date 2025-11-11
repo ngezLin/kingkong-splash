@@ -2,11 +2,11 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "Kolam Renang King Kong Splash Pandaan | Wahana Air Keluarga",
+    default: "Kolam Renang King Kong Splash Pandaan | Kolam Renang Keluarga",
     template: "%s | King Kong Splash Pandaan",
   },
   description:
-    "Kolam Renang King Kong Splash Pandaan — wahana air keluarga terbaik di Pasuruan. Nikmati seluncuran seru, kolam anak, dan tempat liburan menyenangkan di Pandaan.",
+    "Kolam Renang King Kong Splash Pandaan — kolam renang keluarga terbaik di Pasuruan. Nikmati seluncuran seru, kolam anak, dan tempat liburan menyenangkan di Pandaan.",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
     "Kolam Renang King Kong",
@@ -19,9 +19,9 @@ export const metadata = {
     "Waterpark Pandaan",
   ],
   openGraph: {
-    title: "King Kong Splash | Wahana Air Seru di Pandaan",
+    title: "King Kong Splash | Kolam Renang Seru di Pandaan",
     description:
-      "Nikmati liburan seru di King Kong Splash — kolam renang dan wahana air terbaik di Pandaan, Pasuruan. Cocok untuk keluarga dan anak-anak!",
+      "Nikmati liburan seru di King Kong Splash — kolam renang dan Kolam Renang terbaik di Pandaan, Pasuruan. Cocok untuk keluarga dan anak-anak!",
     url: "https://kolamrenangkingkong.com",
     siteName: "King Kong Splash",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "King Kong Splash Pandaan - Kolam Renang & Wahana Air Keluarga",
+        alt: "King Kong Splash Pandaan - Kolam Renang & Kolam Renang Keluarga",
       },
     ],
     locale: "id_ID",
@@ -37,9 +37,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "King Kong Splash | Wahana Air Seru di Pandaan",
+    title: "King Kong Splash | Kolam Renang Seru di Pandaan",
     description:
-      "King Kong Splash Waterpark — Kolam renang dan wahana air keluarga terbaik di Pandaan, Pasuruan.",
+      "King Kong Splash Waterpark — Kolam renang dan Kolam Renang keluarga terbaik di Pandaan, Pasuruan.",
     images: ["/og-image.jpg"],
   },
   robots: {

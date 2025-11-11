@@ -17,7 +17,7 @@ export default function Footer() {
           </h2>
           <p className="mt-3 text-sm text-[#E3F6F7]/80 max-w-sm leading-relaxed">
             Destinasi wisata di pandaan , dengan wahana seru, kolam bersih, dan
-            suasana menyenangkan untuk seluruh keluarga. Ownernya main emel.
+            suasana menyenangkan untuk seluruh keluarga.
           </p>
         </div>
 

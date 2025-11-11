@@ -16,7 +16,7 @@ export default function Pricing() {
         "Gazebo & area santai gratis",
         "Parkir luas & aman",
       ],
-      highlight: false,
+      highlight: true,
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ export default function Pricing() {
         "Bisa request acara & dekorasi",
         "Gratis 1 tiket untuk tiap 20 orang",
       ],
-      highlight: true,
+      highlight: false,
     },
   ];
 
@@ -49,8 +49,8 @@ export default function Pricing() {
           {/* === LEFT SIDE === */}
           <div className="lg:col-span-1 text-center lg:text-left">
             <p className="text-[#6FCEDC] font-semibold mb-3">Harga & Promo</p>
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-              Harga tiket yang fleksibel
+            <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
+              HARGA TIKET
             </h2>
             <p className="text-gray-600 text-lg">
               Pilih paket terbaik untuk kunjungan kamu ke{" "}
@@ -58,19 +58,18 @@ export default function Pricing() {
               lengkap dengan harga yang ramah di kantong. Coba tiket promo kami
               untuk pengalaman lebih hemat!
             </p>
-            <p className="text-sm text-gray-500 mt-4 mb-8">
+            {/* <p className="text-sm text-gray-500 mt-4 mb-8">
               Semua tiket sudah termasuk akses ke seluruh area kolam & wahana
               air.
-            </p>
+            </p> */}
 
             {/* logo */}
             <div className="flex justify-center lg:justify-start">
               <Image
-                src="/images/pricinglogo.jpg"
+                src="/images/pricinglogo.png"
                 alt="King Kong Splash Pricing Logo"
                 width={280}
                 height={180}
-                className="object-contain rounded-xl shadow-lg border border-cyan-100"
                 priority
               />
             </div>
@@ -85,7 +84,7 @@ export default function Pricing() {
                   plan.highlight
                     ? "border-[#6FCEDC] bg-white/90 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
                     : "border-gray-200 bg-white/80 backdrop-blur-sm"
-                } p-10 min-h-[600px] hover:-translate-y-2 transition-all duration-300`}
+                } p-10 min-h-[500px] hover:-translate-y-2 transition-all duration-300`}
               >
                 {/* Icon top */}
                 <div

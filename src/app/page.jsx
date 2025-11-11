@@ -6,8 +6,8 @@ import Gallery from "@/components/Gallery";
 import Merchandise from "@/components/Merchandise";
 import AboutMap from "@/components/AboutMap";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import Description from "@/components/Description";
+import CallButton from "@/components/CallButton";
 
 export default function Page() {
   return (
@@ -15,6 +15,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <Event />
+      <CallButton />
       <Pricing />
       <Description />
       <Gallery />

@@ -122,13 +122,14 @@ export default function Hero() {
           name: "King Kong Splash",
           alternateName: [
             "Kolam Renang King Kong",
-            "Wahana Air Pandaan",
-            "King Kong Splash Waterpark",
+            "Kolam Renang Kingkong Splash",
             "Kolam Renang Pandaan",
-            "Kolam Renang Kingkong",
+            "King Kong Splash Waterpark",
+            "Wahana Air King Kong",
+            "Kolam Renang Keluarga Pandaan",
           ],
           description:
-            "Kolam renang dan wahana air terbaik di Pandaan. King Kong Splash menawarkan pengalaman liburan keluarga yang seru dengan berbagai wahana air untuk anak dan dewasa.",
+            "Kolam Renang King Kong Splash di Pandaan, Pasuruan — wahana air keluarga terbaik dengan seluncuran raksasa dan kolam anak. Cocok untuk wisata keluarga dan acara sekolah.",
           image: "https://kolamrenangkingkong.com/images/hero.webp",
           url: "https://kolamrenangkingkong.com",
           telephone: "+6287701044580",

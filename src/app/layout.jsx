@@ -2,24 +2,21 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "King Kong Splash | Wahana Air Seru di Pandaan",
-    template: "%s | King Kong Splash",
+    default: "Kolam Renang King Kong Splash Pandaan | Wahana Air Keluarga",
+    template: "%s | King Kong Splash Pandaan",
   },
   description:
-    "Nikmati keseruan di King Kong Splash — kolam renang dan wahana air keluarga terbaik di Pandaan. Tempat liburan seru untuk anak dan keluarga!",
+    "Kolam Renang King Kong Splash Pandaan — wahana air keluarga terbaik di Pasuruan. Nikmati seluncuran seru, kolam anak, dan tempat liburan menyenangkan di Pandaan.",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
+    "Kolam Renang King Kong",
     "King Kong Splash",
-    "king kong splash",
-    "kingkongsplash",
-    "kolam renang",
-    "kolam renang Pandaan",
-    "kolam renang Kingkong",
-    "wahana air Pandaan",
-    "tempat wisata Pandaan",
-    "kolam renang sekitar",
-    "kolam renang king kong pandaan",
-    "King Kong Splash Waterpark Pandaan",
+    "Kolam Renang Pandaan",
+    "Wahana Air Pandaan",
+    "Kolam Renang Kingkong",
+    "Wisata Air Pandaan",
+    "Tempat Liburan Keluarga Pasuruan",
+    "Waterpark Pandaan",
   ],
   openGraph: {
     title: "King Kong Splash | Wahana Air Seru di Pandaan",

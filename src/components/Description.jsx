@@ -30,13 +30,23 @@ export default function Description() {
           {/* Paragraph 1 */}
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-cyan-100">
             <p className="text-gray-700 text-lg leading-relaxed">
-              <strong className="text-cyan-600">King Kong Splash</strong> adalah{" "}
-              <strong className="text-gray-800">kolam renang di Pandaan</strong>{" "}
-              yang menawarkan berbagai{" "}
-              <strong className="text-gray-800">wahana air seru</strong> untuk
-              anak-anak dan keluarga. Dengan suasana sejuk khas Pasuruan dan
-              area yang luas, tempat ini cocok untuk rekreasi keluarga, acara
-              sekolah, maupun liburan akhir pekan.
+              <strong className="text-cyan-600">
+                Kolam Renang King Kong Splash
+              </strong>{" "}
+              adalah
+              <strong className="text-gray-800">
+                {" "}
+                kolam renang di Pandaan
+              </strong>{" "}
+              yang juga dikenal sebagai <strong>King Kong Waterpark</strong> —
+              destinasi
+              <strong className="text-gray-800">
+                {" "}
+                wahana air keluarga
+              </strong>{" "}
+              terbaik di Pasuruan. Tempat ini menawarkan berbagai permainan air
+              seru untuk anak dan dewasa dengan suasana sejuk khas pegunungan
+              Pandaan.
             </p>
           </div>
 

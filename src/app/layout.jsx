@@ -2,11 +2,12 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "Kolam Renang King Kong Splash Pandaan | Kolam Renang Keluarga",
-    template: "%s | King Kong Splash Pandaan",
+    default:
+      "Kolam Renang King Kong Splash Pandaan | Wahana Air & Liburan Keluarga",
+    template: "%s | Kolam Renang King Kong Splash Pandaan",
   },
   description:
-    "Kolam Renang King Kong Splash Pandaan — kolam renang keluarga terbaik di Pasuruan. Nikmati seluncuran seru, kolam anak, dan tempat liburan menyenangkan di Pandaan.",
+    "King Kong Splash — Kolam Renang di Pandaan, Pasuruan. Wahana air keluarga terbaik dengan seluncuran raksasa dan kolam anak. Tempat wisata air favorit di Pandaan.",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
     "Kolam Renang King Kong",

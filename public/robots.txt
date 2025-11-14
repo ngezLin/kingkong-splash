@@ -1,9 +1,9 @@
-# *
+# Semua bot diizinkan
 User-agent: *
 Allow: /
 
-# Host
-Host: https://kolamrenangkingkong.com
-
 # Sitemap
 Sitemap: https://kolamrenangkingkong.com/sitemap.xml
+
+# Host
+Host: https://kolamrenangkingkong.com

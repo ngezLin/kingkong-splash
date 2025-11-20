@@ -82,7 +82,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <head>
-        {/* Force favicon reload - tambahkan link favicon secara eksplisit */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link
           rel="icon"

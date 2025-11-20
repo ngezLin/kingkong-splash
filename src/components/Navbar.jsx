@@ -10,7 +10,6 @@ export default function Navbar() {
 
   // Scroll smooth ke section
   const handleScroll = (e, targetId) => {
-    e.preventDefault();
     const target = document.querySelector(targetId);
     if (target) {
       const offset = target.getBoundingClientRect().top + window.scrollY - 80;
@@ -53,6 +52,7 @@ export default function Navbar() {
     { id: "#about", label: "About" },
   ];
 
+  const baseUrl = "https://kolamrenangkingkong.com";
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-6 py-2  text-[#323131]">
         {/* Logo */}
         <a
-          href="#hero"
+          href={baseUrl}
           onClick={(e) => handleScroll(e, "#hero")}
           className="flex items-center"
         >

@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-
 export const metadata = {
   title: "Tentang King Kong Splash",
   description:
@@ -42,8 +40,6 @@ export default function AboutPage() {
           </ul>
         </div>
       </section>
-
-      {/* <Footer /> */}
     </main>
   );
 }

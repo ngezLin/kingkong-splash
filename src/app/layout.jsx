@@ -83,7 +83,21 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <head>
         <link rel="manifest" href="/site.webmanifest" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "King Kong Splash",
+              "url": "https://kolamrenangkingkong.com",
+              "logo": "https://kolamrenangkingkong.com/logo-kingkong.png"
+            }),
+          }}
+        />
       </head>
+
       <body className="antialiased bg-sky-50 text-gray-800">{children}</body>
     </html>
   );

@@ -122,6 +122,7 @@ export default function Hero() {
           name: "King Kong Splash",
           alternateName: [
             "Kolam Renang King Kong",
+            "Kolam Renang King Kong Splash",
             "Kolam Renang Kingkong Splash",
             "Kolam Renang Pandaan",
             "King Kong Splash Waterpark",

@@ -171,22 +171,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <head>
-        {/* Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
-
-        {/* DNS Prefetch for performance */}
+        {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-        {/* Structured Data - JSON-LD */}
+        {/* JSON-LD */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Additional Meta Tags */}
         <meta name="author" content="King Kong Splash" />
         <meta name="format-detection" content="telephone=no" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />

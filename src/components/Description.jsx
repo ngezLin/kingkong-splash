@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Description() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-white via-blue-50 to-cyan-50">
+    <section className="py-24 bg-white/0 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <motion.div

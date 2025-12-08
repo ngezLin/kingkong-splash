@@ -34,10 +34,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section
-      id="pricing"
-      className="py-24 bg-gradient-to-b from-cyan-50 via-blue-50 to-white relative overflow-hidden"
-    >
+    <section id="pricing" className="py-24 relative overflow-hidden">
       {/* Subtle floating shapes for depth */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute w-64 h-64 bg-cyan-200 rounded-full blur-3xl -top-20 -left-20"></div>

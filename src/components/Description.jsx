@@ -57,8 +57,8 @@ export default function Description() {
               <strong className="text-gray-800">kolam renang Kingkong</strong>,
               King Kong Splash menghadirkan pengalaman bermain air yang aman,
               bersih, dan menyenangkan. Banyak pengunjung menyebutnya sebagai{" "}
-              <strong className="text-gray-800">wahana air Pandaan</strong>{" "}
-              paling populer, berkat fasilitas modern dan area bermain yang
+              <strong className="text-gray-800">tempat renang Pandaan</strong>{" "}
+              paling favorit dan <strong className="text-gray-800">kolam Pandaan</strong> yang wajib dikunjungi berkat fasilitas modern dan area bermain yang
               selalu terawat.
             </p>
           </div>

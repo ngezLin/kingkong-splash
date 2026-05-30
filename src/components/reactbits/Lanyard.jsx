@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useRef, useState, Suspense } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import { useGLTF, useTexture, Environment, Html } from "@react-three/drei";
+import { useGLTF, useTexture, Html } from "@react-three/drei";
 import {
   BallCollider,
   CuboidCollider,
@@ -49,7 +49,6 @@ export default function Lanyard({
             <Band />
           </Physics>
 
-          <Environment preset="studio" background={false} />
         </Suspense>
       </Canvas>
     </div>

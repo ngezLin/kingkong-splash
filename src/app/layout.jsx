@@ -3,27 +3,31 @@ import "./globals.css";
 export const metadata = {
   title: {
     default:
-      "Kolam Renang King Kong | King Kong Splash Pandaan - Wahana Air Keluarga",
-    template: "%s | Kolam Renang King Kong Splash Pandaan",
+      "Kolam Renang Pandaan | King Kong Splash - Wahana Air Keluarga Terbaik",
+    template: "%s | King Kong Splash Pandaan",
   },
   description:
-    "King Kong Splash — Kolam Renang King Kong di Pandaan, Pasuruan. Wahana air keluarga terbaik dengan seluncuran raksasa dan kolam anak. Tempat wisata air favorit di Pandaan.",
+    "Cari kolam renang di Pandaan? King Kong Splash adalah kolam renang dan wahana air keluarga terbaik di Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan fasilitas lengkap.",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
-    "Kolam Renang King Kong",
-    "King Kong Splash",
-    "Kolam Renang King Kong Splash",
     "Kolam Renang Pandaan",
+    "Kolam Renang di Pandaan",
+    "Kolam Renang Pandaan Terbaik",
+    "King Kong Splash Pandaan",
+    "Kolam Renang King Kong",
     "Wahana Air Pandaan",
-    "Kolam Renang Kingkong",
-    "Wisata Air Pandaan",
-    "Tempat Liburan Keluarga Pasuruan",
     "Waterpark Pandaan",
+    "Wisata Air Pasuruan",
+    "Tempat Berenang di Pandaan",
+    "Kolam Renang Pasuruan",
+    "Kingkong Splash",
+    "kolam pandaan",
+    "tempat renang pandaan",
   ],
   openGraph: {
-    title: "King Kong Splash | Kolam Renang Seru di Pandaan",
+    title: "King Kong Splash Pandaan | Kolam Renang & Wahana Air Keluarga",
     description:
-      "Nikmati liburan seru di King Kong Splash — kolam renang dan waterpark terbaik di Pandaan, Pasuruan. Cocok untuk keluarga dan anak-anak!",
+      "Nikmati liburan seru di King Kong Splash — kolam renang dan waterpark keluarga terbaik di Pandaan, Pasuruan. Aman, bersih, dan menyenangkan!",
     url: "https://kolamrenangkingkong.com",
     siteName: "King Kong Splash",
     images: [
@@ -45,9 +49,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "King Kong Splash | Kolam Renang Seru di Pandaan",
+    title: "King Kong Splash Pandaan | Wahana Air Seru di Pandaan",
     description:
-      "King Kong Splash Waterpark — Kolam renang dan waterpark keluarga terbaik di Pandaan, Pasuruan.",
+      "King Kong Splash Waterpark — Kolam renang dan wahana air keluarga terbaik di Pandaan, Pasuruan.",
     images: ["https://kolamrenangkingkong.com/og-image.jpg"],
   },
   robots: {
@@ -90,11 +94,8 @@ export const metadata = {
   },
 
   manifest: "/site.webmanifest",
-  themeColor: "#6FCEDC",
   verification: {
-    // Add your verification codes here when you get them
     google: "your-google-verification-code",
-    // bing: "your-bing-verification-code",
   },
 };
 
@@ -120,38 +121,69 @@ export default function RootLayout({ children }) {
           height: 630,
         },
         sameAs: [
-          // Add your social media links here
-          // "https://www.facebook.com/kingkongsplash",
-          // "https://www.instagram.com/kingkongsplash",
-          // "https://www.tiktok.com/@kingkongsplash",
+          "https://www.facebook.com/kingkongsplash",
+          "https://www.instagram.com/kingkongsplash",
+        ],
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://kolamrenangkingkong.com/#localbusiness",
+        name: "King Kong Splash Waterpark",
+        alternateName: [
+          "Kolam Renang King Kong",
+          "Kolam Renang King Kong Splash",
+          "King Kong Splash Pandaan",
+          "Kolam Pandaan",
+          "Tempat Renang Pandaan",
+        ],
+        description:
+          "Kolam renang dan wahana air keluarga terbaik di Pandaan, Pasuruan. Menawarkan seluncuran raksasa dan kolam anak yang aman.",
+        image: "https://kolamrenangkingkong.com/images/hero.webp",
+        url: "https://kolamrenangkingkong.com",
+        telephone: "+6287701044580",
+        priceRange: "Rp15.000 - Rp20.000",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Jl. Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris",
+          addressLocality: "Pandaan",
+          addressRegion: "Pasuruan",
+          postalCode: "67156",
+          addressCountry: "ID",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "-7.6451416",
+          longitude: "112.7052399",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ],
+            opens: "07:00",
+            closes: "17:00",
+          },
         ],
       },
       {
         "@type": "TouristAttraction",
-        "@id": "https://kolamrenangkingkong.com/#place",
+        "@id": "https://kolamrenangkingkong.com/#attraction",
         name: "King Kong Splash Waterpark",
-        alternateName: [
-          "Kolam Renang King Kong",
-          "Kolam Renang King Kong Splash Pandaan",
-        ],
         description:
-          "King Kong Splash Waterpark adalah Kolam Renang King Kong dan wahana air terbaik di Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan berbagai fasilitas keluarga.",
+          "Destinasi wisata air populer di Pandaan dengan berbagai wahana seru.",
         url: "https://kolamrenangkingkong.com",
-        image: [
-          "https://kolamrenangkingkong.com/og-image.jpg",
-          "https://kolamrenangkingkong.com/logo-kingkong.png",
-        ],
         address: {
           "@type": "PostalAddress",
           addressLocality: "Pandaan",
           addressRegion: "Jawa Timur",
           addressCountry: "ID",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          // Add your actual coordinates
-          latitude: "-7.6523",
-          longitude: "112.6876",
         },
       },
       {
@@ -165,11 +197,63 @@ export default function RootLayout({ children }) {
         },
         inLanguage: "id-ID",
       },
+      {
+        "@type": "FAQPage",
+        "@id": "https://kolamrenangkingkong.com/#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Berapa harga tiket masuk King Kong Splash?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Harga tiket masuk King Kong Splash berkisar antara Rp15.000 hingga Rp25.000, tergantung pada hari kunjungan (weekdays/weekend/holiday).",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Di mana lokasi Kolam Renang King Kong?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Lokasi King Kong Splash berada di Jl. Pahlawan Prof. Sunaryo No.9, Mbajang, Pandaan, Pasuruan, Jawa Timur.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Jam berapa King Kong Splash buka?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "King Kong Splash buka setiap hari (Senin-Minggu) mulai pukul 07.00 WIB hingga 17.00 WIB.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Apa tempat renang di Pandaan yang paling direkomendasikan?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "King Kong Splash adalah tempat renang di Pandaan yang sangat direkomendasikan karena memiliki wahana lengkap, air yang bersih, dan lokasi yang mudah dijangkau (kolam Pandaan favorit).",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "ImageGallery",
+        "@id": "https://kolamrenangkingkong.com/#gallery",
+        name: "Galeri King Kong Splash",
+        description:
+          "Koleksi foto keseruan wahana air dan fasilitas di King Kong Splash Pandaan.",
+        image: [
+          "https://kolamrenangkingkong.com/images/gal1.png",
+          "https://kolamrenangkingkong.com/images/gal2.png",
+          "https://kolamrenangkingkong.com/images/gal3.png",
+          "https://kolamrenangkingkong.com/images/gal4.png",
+          "https://kolamrenangkingkong.com/images/gal5.png",
+        ],
+      },
     ],
   };
 
   return (
-    <html lang="id">
+    <html lang="id" className="scroll-smooth">
       <head>
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

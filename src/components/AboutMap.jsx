@@ -1,6 +1,5 @@
 "use client";
 import AnimatedContent from "./AnimatedContent";
-import Script from "next/script";
 
 export default function AboutMap() {
   return (
@@ -95,52 +94,6 @@ export default function AboutMap() {
         </div>
       </div>
 
-      {/* Schema LocalBusiness */}
-      <Script type="application/ld+json" id="local-business-schema">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "King Kong Splash Waterpark",
-          image: "https://kolamrenangkingkong.com/images/hero.webp",
-          url: "https://kolamrenangkingkong.com",
-          telephone: "+6287701044580",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Jalan Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris, Kec. Pandaan, Pasuruan, Jawa Timur 67156",
-            addressLocality: "Pandaan",
-            addressRegion: "Pasuruan",
-            postalCode: "67156",
-            addressCountry: "ID",
-          },
-          openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday",
-              ],
-              opens: "07:00",
-              closes: "17:00",
-            },
-          ],
-          priceRange: "Rp.15,000",
-          sameAs: [
-            "https://www.facebook.com/kingkongsplash",
-            "https://www.instagram.com/kingkongsplash",
-          ],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            reviewCount: "125",
-          },
-        })}
-      </Script>
     </section>
   );
 }

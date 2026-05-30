@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 
 export default function Hero() {
   return (
@@ -13,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero.webp"
-          alt="Kolam Renang King Kong Splash Pandaan - Wahana Air Keluarga dan Seluncuran Raksasa"
+          alt="Kolam Renang Pandaan - King Kong Splash Waterpark Pasuruan"
           fill
           className="object-cover"
           priority
@@ -28,13 +27,13 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
           <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
           <span className="text-white text-sm font-semibold">
-            Waterpark Terfavorit di Pandaan
+            Kolam Renang Terfavorit di Pandaan
           </span>
         </div>
 
         {/* Main Title */}
         <h1 className="text-6xl md:text-7xl font-bold text-white leading-tight mb-0">
-          Kolam Renang King Kong
+          Kolam Renang Pandaan
           <span className="block text-cyan-300">
             King Kong Splash Waterpark
           </span>
@@ -42,7 +41,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="text-2xl md:text-2xl text-white font-semibold max-w-4xl mx-auto mt-1">
-          Kolam Renang Pandaan Terbaik untuk Liburan Keluarga
+          Wisata Air Keluarga Terbaik & Seru di Pasuruan
         </p>
 
         {/* CTA Buttons */}
@@ -114,70 +113,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Schema LocalBusiness */}
-      <Script type="application/ld+json" id="local-business-schema">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "King Kong Splash",
-          alternateName: [
-            "Kolam Renang King Kong",
-            "Kolam Renang King Kong Splash",
-            "Kolam Renang Kingkong Splash",
-            "Kolam Renang Pandaan",
-            "King Kong Splash Waterpark",
-            "Wahana Air King Kong",
-            "Kolam Renang Keluarga Pandaan",
-          ],
-          description:
-            "Kolam Renang King Kong Splash di Pandaan, Pasuruan — wahana air keluarga terbaik dengan seluncuran raksasa dan kolam anak. Cocok untuk wisata keluarga dan acara sekolah.",
-          image: "https://kolamrenangkingkong.com/images/hero.webp",
-          url: "https://kolamrenangkingkong.com",
-          telephone: "+6287701044580",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Jalan Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris",
-            addressLocality: "Pandaan",
-            addressRegion: "Jawa Timur",
-            postalCode: "67156",
-            addressCountry: "ID",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: "-7.6522",
-            longitude: "112.6842",
-          },
-          openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday",
-              ],
-              opens: "07:00",
-              closes: "17:00",
-            },
-          ],
-          priceRange: "Rp15.000 - Rp25.000",
-          sameAs: [
-            "https://www.facebook.com/kingkongsplash",
-            "https://www.instagram.com/kingkongsplash",
-          ],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            reviewCount: "125",
-            bestRating: "5",
-            worstRating: "1",
-          },
-        })}
-      </Script>
     </section>
   );
 }

@@ -161,13 +161,18 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
 
     // --- AUTO ROTATE LOGIC ---
     if (!dragged && card.current) {
-      const autoSpeed = 0.5; // kecepatan rotasi
-      const rotation = card.current.rotation();
-      card.current.setRotation({
-        x: rotation.x,
-        y: rotation.y + delta * autoSpeed,
-        z: rotation.z,
-      });
+      const autoSpeed = 0.5; // rotation speed
+      const currentRotation = card.current.rotation();
+      const q = new THREE.Quaternion(
+        currentRotation.x,
+        currentRotation.y,
+        currentRotation.z,
+        currentRotation.w
+      );
+      const euler = new THREE.Euler().setFromQuaternion(q);
+      euler.y += delta * autoSpeed;
+      const nextQuat = new THREE.Quaternion().setFromEuler(euler);
+      card.current.setRotation(nextQuat, true);
     }
   });
 
@@ -178,19 +183,19 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     <>
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
+        <RigidBody position={[0, -1.0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
+        <RigidBody position={[0, -2.0, 0]} ref={j2} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
+        <RigidBody position={[0, -3.0, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
 
         {/* CARD */}
         <RigidBody
-          position={[2, 0, 0]}
+          position={[0, -4.5, 0]}
           ref={card}
           {...segmentProps}
           type={dragged ? "kinematicPosition" : "dynamic"}

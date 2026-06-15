@@ -1,3 +1,4 @@
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 export const metadata = {
@@ -270,7 +271,9 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       </head>
 
-      <body className="antialiased bg-sky-50 text-gray-800">{children}</body>
+      <body className="antialiased bg-sky-50 text-gray-800">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

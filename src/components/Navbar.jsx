@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#hero");
-  const [scrolled, setScrolled] = useState(false);
+  const [opacity, setOpacity] = useState(0);
 
   // Scroll smooth ke section
   const handleScroll = (e, targetId) => {
@@ -37,8 +37,41 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const eventSection = document.getElementById("event");
+      if (eventSection) {
+        const rect = eventSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        // Start fading in when the Event section enters the viewport
+        const startFade = viewportHeight;
+        // Fully visible when the Event section reaches 100px from the top
+        const endFade = 100;
+
+        if (rect.top >= startFade) {
+          setOpacity(0);
+        } else if (rect.top <= endFade) {
+          setOpacity(1);
+        } else {
+          // Linear interpolation of opacity between 0 and 1
+          const progress = (startFade - rect.top) / (startFade - endFade);
+          setOpacity(progress);
+        }
+      } else {
+        // Fallback based on scroll position
+        const threshold = window.innerHeight * 1.5;
+        const fadeRange = 300;
+        if (window.scrollY >= threshold) {
+          setOpacity(1);
+        } else if (window.scrollY <= threshold - fadeRange) {
+          setOpacity(0);
+        } else {
+          const progress = (window.scrollY - (threshold - fadeRange)) / fadeRange;
+          setOpacity(progress);
+        }
+      }
+    };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run initially
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -55,11 +88,11 @@ export default function Navbar() {
   const baseUrl = "https://kolamrenangkingkong.com";
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-lg border-b border-[#63B5D6]/30"
-          : "bg-transparent backdrop-blur-none border-none shadow-none"
-      }`}
+      style={{
+        opacity: opacity,
+        pointerEvents: opacity > 0.1 ? "auto" : "none",
+      }}
+      className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-lg border-b border-[#63B5D6]/30 transition-shadow duration-500"
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-2  text-[#323131]">
         {/* Logo */}

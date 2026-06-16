@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Play, Pause } from "lucide-react";
 
 const startFrame = 2;
 const numFrames = 215;
@@ -24,17 +25,47 @@ export default function Hero() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadProgress, setLoadProgress] = useState(0);
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef(null);
+
   useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play().catch((err) => console.log("Video play failed:", err));
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  useEffect(() => {
+    if (!isMounted) return;
+
+    if (isMobile) {
+      setIsLoading(false);
+      return;
+    }
+
     // Register GSAP ScrollTrigger inside useEffect for Next.js SSR compatibility
     gsap.registerPlugin(ScrollTrigger);
 
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Load only a subset of frames on mobile screens to drastically reduce memory usage and prevent VRAM exhaustion lag
-    const isMobile = window.innerWidth < 768;
-    const frameStep = isMobile ? 3 : 1; // Load 1/3 of the frames on mobile (71 frames instead of 214)
-    const subsetTotal = Math.ceil(totalFrames / frameStep);
+    const frameStep = 1;
+    const subsetTotal = totalFrames;
 
     let loadedCount = 0;
     const tempImages = [];
@@ -179,27 +210,49 @@ export default function Hero() {
       // Cleanup events on unmount
       window.removeEventListener("resize", handleResize);
     };
-  }, [isLoading]);
+  }, [isMounted, isMobile, isLoading]);
 
   return (
     <section
       ref={containerRef}
       id="hero"
-      style={{ height: "250vh" }} // Inline style guarantees container height and enables scroll range on Windows
-      className="relative w-full"
+      style={{ height: isMobile ? "100vh" : "250vh" }}
+      className="relative w-full animate-fade-in"
     >
-      {/* Sticky background wrapper containing both Canvas and Text Content Overlay */}
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-sky-950 z-0">
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover block z-0"
-        />
+      {/* Sticky background wrapper containing either Video (Mobile) or Canvas (Desktop) */}
+      <div className={`${isMobile ? "absolute" : "sticky"} top-0 left-0 w-full h-screen overflow-hidden bg-sky-950 z-0`}>
+        {isMobile ? (
+          <>
+            <video
+              ref={videoRef}
+              src="/assets/KingkongSplashHeroVideo.mp4"
+              className="absolute inset-0 w-full h-full object-cover block z-0"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            {/* Glassmorphic Play/Pause toggle overlay button */}
+            <button
+              onClick={togglePlay}
+              className="absolute bottom-6 right-6 z-20 p-3 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 rounded-full text-white transition-all shadow-lg active:scale-95 pointer-events-auto"
+              aria-label={isPlaying ? "Pause background video" : "Play background video"}
+            >
+              {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+            </button>
+          </>
+        ) : (
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full object-cover block z-0"
+          />
+        )}
         
-        {/* Dark gradient overlay for top and bottom readability against bright skies/water */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/65 z-1" />
+        {/* Dark gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/65 z-1 pointer-events-none" />
 
-        {/* Loading Overlay */}
-        {isLoading && (
+        {/* Loading Overlay (Only active when loading desktop image sequence) */}
+        {!isMobile && isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-sky-950 z-50 text-white gap-4">
             <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
             <div className="text-cyan-300 font-bold text-xl tracking-wider animate-pulse">
@@ -211,10 +264,10 @@ export default function Hero() {
           </div>
         )}
 
-        {/* Sticky Text Content Wrapper - centered inside the sticky viewport */}
+        {/* Sticky/Absolute Text Content Wrapper - centered inside the viewport */}
         <div
           ref={contentRef}
-          style={{ opacity: 0 }} // Pre-hide to prevent flash on server side render
+          style={{ opacity: isMobile ? 1 : 0 }}
           className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
         >
         {/* pointer-events-auto re-enables link clicking on buttons inside the content container */}
@@ -227,7 +280,7 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Main Title - size is reduced on mobile (text-4xl) to prevent clipping at the top */}
+          {/* Main Title */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight mb-0 drop-shadow-2xl">
             Kolam Renang Pandaan
             <span className="block text-cyan-300 drop-shadow-md">

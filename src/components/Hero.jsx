@@ -31,6 +31,11 @@ export default function Hero() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Load only a subset of frames on mobile screens to drastically reduce memory usage and prevent VRAM exhaustion lag
+    const isMobile = window.innerWidth < 768;
+    const frameStep = isMobile ? 3 : 1; // Load 1/3 of the frames on mobile (71 frames instead of 214)
+    const subsetTotal = Math.ceil(totalFrames / frameStep);
+
     let loadedCount = 0;
     const tempImages = [];
     const animationObj = { frame: 1 };
@@ -72,7 +77,7 @@ export default function Hero() {
 
       // Re-draw current frame on resize
       const currentFrame = Math.floor(animationObj.frame) - 1;
-      drawFrame(Math.min(Math.max(0, currentFrame), totalFrames - 1));
+      drawFrame(Math.min(Math.max(0, currentFrame), subsetTotal - 1));
     };
 
     const initScrollAnimation = () => {
@@ -87,7 +92,7 @@ export default function Hero() {
 
       // GSAP Timeline to animate the frame sequence tied to scrolling
       const timeline = gsap.to(animationObj, {
-        frame: totalFrames,
+        frame: subsetTotal,
         snap: "frame", // Snap value to whole integer frames
         ease: "none",
         scrollTrigger: {
@@ -98,7 +103,7 @@ export default function Hero() {
         },
         onUpdate: () => {
           const currentFrame = Math.floor(animationObj.frame) - 1;
-          drawFrame(Math.min(Math.max(0, currentFrame), totalFrames - 1));
+          drawFrame(Math.min(Math.max(0, currentFrame), subsetTotal - 1));
         },
       });
 
@@ -135,9 +140,9 @@ export default function Hero() {
 
     const onImageLoad = () => {
       loadedCount++;
-      setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
+      setLoadProgress(Math.round((loadedCount / subsetTotal) * 100));
 
-      if (loadedCount === totalFrames) {
+      if (loadedCount === subsetTotal) {
         setIsLoading(false);
         // Wait a small bit to let state resolve before initializing animation
         setTimeout(() => {
@@ -146,8 +151,8 @@ export default function Hero() {
       }
     };
 
-    // Preload all frames asynchronously starting from 0002.jpg (index 0)
-    for (let i = 0; i < totalFrames; i++) {
+    // Preload subset of frames asynchronously starting from 0002.jpg (index 0)
+    for (let i = 0; i < totalFrames; i += frameStep) {
       const img = new Image();
       img.src = getFramePath(i);
       img.onload = onImageLoad;

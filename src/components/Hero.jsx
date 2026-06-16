@@ -205,14 +205,13 @@ export default function Hero() {
             </div>
           </div>
         )}
-      </div>
 
-      {/* Sticky Text Content Wrapper - centered inside the sticky viewport */}
-      <div
-        ref={contentRef}
-        style={{ opacity: 0 }} // Pre-hide to prevent flash on server side render
-        className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
-      >
+        {/* Sticky Text Content Wrapper - centered inside the sticky viewport */}
+        <div
+          ref={contentRef}
+          style={{ opacity: 0 }} // Pre-hide to prevent flash on server side render
+          className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
+        >
         {/* pointer-events-auto re-enables link clicking on buttons inside the content container */}
         <div className="w-full max-w-6xl mx-auto px-6 text-center space-y-4 md:space-y-6 pointer-events-auto">
           {/* Badge */}
@@ -303,6 +302,7 @@ export default function Hero() {
               <span className="font-semibold">Aman & Terpercaya</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

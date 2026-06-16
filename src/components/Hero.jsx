@@ -212,6 +212,20 @@ export default function Hero() {
     };
   }, [isMounted, isMobile, isLoading]);
 
+  if (!isMounted) {
+    return (
+      <section
+        id="hero"
+        className="relative w-full h-screen bg-sky-950 flex flex-col items-center justify-center text-white gap-4 z-50"
+      >
+        <div className="w-16 h-16 border-4 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin"></div>
+        <div className="text-cyan-300 font-bold text-xl tracking-wider animate-pulse">
+          Memuat King Kong Splash...
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       ref={containerRef}

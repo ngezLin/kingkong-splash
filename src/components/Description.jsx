@@ -31,22 +31,18 @@ export default function Description() {
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-cyan-100">
             <p className="text-gray-700 text-lg leading-relaxed">
               <strong className="text-cyan-600">
-                Kolam Renang King Kong Splash
+                Kolam Renang King Kong Splash Pandaan
               </strong>{" "}
-              adalah
+              adalah pilihan utama bagi yang mencari{" "}
               <strong className="text-gray-800">
-                {" "}
-                kolam renang di Pandaan
+                kolam renang Pandaan
               </strong>{" "}
-              yang juga dikenal sebagai <strong>King Kong Waterpark</strong> —
-              destinasi
+              atau destinasi wisata air keluarga. Dikenal luas sebagai salah satu{" "}
               <strong className="text-gray-800">
-                {" "}
-                wahana air keluarga
+                kolam renang King Kong
               </strong>{" "}
-              terbaik di Pasuruan. Tempat ini menawarkan berbagai permainan air
-              seru untuk anak dan dewasa dengan suasana sejuk khas pegunungan
-              Pandaan.
+              terbaik di Pasuruan, tempat ini menawarkan berbagai permainan air
+              seru untuk anak dan dewasa dengan suasana sejuk khas pegunungan.
             </p>
           </div>
 

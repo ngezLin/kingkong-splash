@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata = {
   title: {
     default:
-      "Kolam Renang Pandaan | King Kong Splash - Wahana Air Keluarga Terbaik",
+      "Kolam Renang Pandaan - King Kong Splash | Kolam Renang Kingkong Terbaik",
     template: "%s | King Kong Splash Pandaan",
   },
   description:
-    "Cari kolam renang di Pandaan? King Kong Splash adalah kolam renang dan wahana air keluarga terbaik di Pandaan, Pasuruan. Nikmati seluncuran raksasa, kolam anak, dan fasilitas lengkap.",
+    "Mencari kolam renang Pandaan? Kunjungi King Kong Splash, destinasi kolam renang King Kong & Kingkong Splash terbaik di Pandaan, Pasuruan. Seluncuran seru & kolam anak!",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
     "Kolam Renang Pandaan",
@@ -132,8 +132,11 @@ export default function RootLayout({ children }) {
         name: "King Kong Splash Waterpark",
         alternateName: [
           "Kolam Renang King Kong",
+          "Kolam Renang Kingkong",
           "Kolam Renang King Kong Splash",
+          "Kingkong Splash",
           "King Kong Splash Pandaan",
+          "Kolam Renang Pandaan",
           "Kolam Pandaan",
           "Tempat Renang Pandaan",
         ],

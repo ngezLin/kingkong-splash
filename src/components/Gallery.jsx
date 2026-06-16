@@ -22,29 +22,30 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+      className="relative py-24 overflow-hidden bg-transparent"
     >
       {/* === Animated Background Elements === */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Cyan Orbs */}
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse"></div>
+        {/* Soft Cyan Orbs */}
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-300/35 rounded-full blur-[120px] animate-pulse"></div>
         <div
-          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse"
+          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-300/25 rounded-full blur-[120px] animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
 
         {/* Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(99,181,214,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(99,181,214,0.04)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
 
       {/* === Content === */}
       <div className="relative z-10">
         {/* Title */}
         <div className="text-center mb-12 px-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800">
             Galeri King Kong Splash
           </h2>
-          <p className="text-slate-300 mt-3 text-lg max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mt-4 mb-6"></div>
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
             Lihat keseruan di King Kong Splash Waterpark Pandaan! Dari
             seluncuran raksasa hingga kolam anak, semua wahana air kami siap
             memberikan pengalaman seru untuk seluruh keluarga.
@@ -52,21 +53,21 @@ export default function Gallery() {
         </div>
 
         {/* Auto-scroll Container */}
-        <div className="space-y-10">
+        <div className="space-y-6">
           {/* Baris 1 - Scroll to Left */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden py-4">
             <div className="flex gap-6 animate-scroll-left">
               {[...row1, ...row1, ...row1].map((item, i) => (
                 <div
                   key={i}
-                  className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg border border-white/10 bg-slate-800/40 backdrop-blur-sm"
+                  className="shrink-0 w-64 h-40 relative rounded-2xl overflow-hidden shadow-md border border-[#6FCEDC]/30 bg-white/50 backdrop-blur-sm hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
                 >
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 16rem"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}
@@ -74,19 +75,19 @@ export default function Gallery() {
           </div>
 
           {/* Baris 2 - Scroll to Right */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden py-4">
             <div className="flex gap-6 animate-scroll-right">
               {[...row2, ...row2, ...row2].map((item, i) => (
                 <div
                   key={i}
-                  className="shrink-0 w-64 h-40 relative rounded-xl overflow-hidden shadow-lg border border-white/10 bg-slate-800/40 backdrop-blur-sm"
+                  className="shrink-0 w-64 h-40 relative rounded-2xl overflow-hidden shadow-md border border-[#6FCEDC]/30 bg-white/50 backdrop-blur-sm hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
                 >
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 16rem"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}

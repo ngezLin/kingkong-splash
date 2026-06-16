@@ -25,19 +25,19 @@ export default function Merchandise() {
   return (
     <section
       id="merchandise"
-      className="relative flex flex-col items-center justify-center w-full min-h-screen py-20 px-6 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+      className="relative flex flex-col items-center justify-center w-full min-h-screen py-20 px-6 overflow-hidden bg-transparent"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse"></div>
+        {/* Soft Gradient Orbs */}
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-300/35 rounded-full blur-[120px] animate-pulse"></div>
         <div
-          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse"
+          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-300/25 rounded-full blur-[120px] animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(99,181,214,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(99,181,214,0.04)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
 
       {/* Content Container */}
@@ -49,12 +49,12 @@ export default function Merchandise() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6FCEDC]/10 border border-[#6FCEDC]/40 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
             </span>
-            <span className="text-cyan-400 text-sm font-semibold tracking-wider">
+            <span className="text-[#2c8a9d] text-sm font-semibold tracking-wider">
               EXCLUSIVE MERCHANDISE
             </span>
           </div>
@@ -62,23 +62,24 @@ export default function Merchandise() {
 
         {/* Title */}
         <motion.h2
-          className="text-5xl md:text-7xl font-black mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white"
+          className="text-5xl md:text-6xl font-extrabold mb-6 text-center text-gray-800"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           King Kong Lanyard
         </motion.h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mb-6"></div>
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg md:text-xl text-slate-300 mb-12 text-center max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-gray-700 mb-12 text-center max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           Lanyard premium dengan desain eksklusif King Kong Splash.
-          <span className="text-cyan-400 font-semibold">
+          <span className="text-cyan-600 font-semibold">
             {" "}
             Putar model 3D
           </span>{" "}
@@ -93,30 +94,30 @@ export default function Merchandise() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           {/* Glow Effect Behind Viewer */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 blur-3xl -z-10 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-300/30 via-blue-300/20 to-cyan-300/30 blur-3xl -z-10 animate-pulse"></div>
 
           {/* Main 3D Viewer Box */}
           <div
-            className="relative h-[500px] md:h-[700px] rounded-3xl overflow-hidden shadow-2xl backdrop-blur-sm
-                          border border-white/10 bg-gradient-to-br from-slate-900/50 via-slate-800/50 to-slate-900/50"
+            className="relative h-[500px] md:h-[700px] rounded-3xl overflow-hidden shadow-xl backdrop-blur-sm
+                          border border-[#6FCEDC]/30 bg-white/70"
           >
             {/* Corner Decorations */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-cyan-400/50 rounded-tl-3xl"></div>
-            <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-cyan-400/50 rounded-tr-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-cyan-400/50 rounded-bl-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-cyan-400/50 rounded-br-3xl"></div>
+            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[#6FCEDC]/40 rounded-tl-3xl"></div>
+            <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-[#6FCEDC]/40 rounded-tr-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-[#6FCEDC]/40 rounded-bl-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[#6FCEDC]/40 rounded-br-3xl"></div>
 
             {/* 3D Content */}
             <Lanyard />
 
             {/* Interaction Hint */}
             <motion.div
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 bg-slate-950/80 backdrop-blur-md rounded-full border border-cyan-500/30"
+              className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 bg-white/95 backdrop-blur-md rounded-full border border-[#6FCEDC]/30 shadow-md"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.5 }}
             >
-              <p className="text-cyan-400 text-sm font-medium flex items-center gap-2">
+              <p className="text-[#2c8a9d] text-sm font-medium flex items-center gap-2">
                 <svg
                   className="w-5 h-5 animate-bounce"
                   fill="none"
@@ -162,14 +163,14 @@ export default function Merchandise() {
           ].map((feature, idx) => (
             <motion.div
               key={idx}
-              className="p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-white/10 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300"
+              className="p-6 rounded-2xl bg-gradient-to-br from-[#E3F6F7]/70 to-[#C9EEF1]/70 border border-[#6FCEDC]/30 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300"
               whileHover={{ y: -5 }}
             >
               <div className="text-4xl mb-3">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-slate-400 text-sm">{feature.desc}</p>
+              <p className="text-gray-600 text-sm">{feature.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -201,7 +202,7 @@ export default function Merchandise() {
             </span>
           </motion.a>
 
-          <p className="text-slate-400 text-sm">
+          <p className="text-gray-600 text-sm font-medium">
             Stok terbatas! Dapatkan sekarang juga 🔥
           </p>
         </motion.div>

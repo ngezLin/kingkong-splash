@@ -34,6 +34,37 @@ export default function Hero() {
     };
   }, [isMounted, hasStarted]);
 
+  // --- Pause/Play video based on viewport intersection ---
+  useEffect(() => {
+    if (!isMounted || !videoRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (hasStarted && videoRef.current) {
+            videoRef.current.play().catch((err) => {});
+          }
+        } else {
+          if (videoRef.current) {
+            videoRef.current.pause();
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [isMounted, hasStarted]);
+
   // --- Handle Play button click ---
   const handlePlay = useCallback(() => {
     setHasStarted(true);

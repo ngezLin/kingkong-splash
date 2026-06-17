@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
@@ -22,8 +23,35 @@ export default function Merchandise() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const [isInView, setIsInView] = useState(false);
+  const merchandiseRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        rootMargin: "200px",
+        threshold: 0.01,
+      }
+    );
+
+    const currentRef = merchandiseRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
     <section
+      ref={merchandiseRef}
       id="merchandise"
       className="relative flex flex-col items-center justify-center w-full min-h-screen py-20 px-6 overflow-hidden bg-transparent"
     >
@@ -108,7 +136,16 @@ export default function Merchandise() {
             <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[#6FCEDC]/40 rounded-br-3xl"></div>
 
             {/* 3D Content */}
-            <Lanyard />
+            {isInView ? (
+              <Lanyard />
+            ) : (
+              <div className="flex justify-center items-center w-full h-[500px]">
+                <div className="relative">
+                  <div className="w-16 h-16 border-4 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin"></div>
+                  <div className="absolute inset-0 w-16 h-16 border-4 border-cyan-400/10 rounded-full"></div>
+                </div>
+              </div>
+            )}
 
             {/* Interaction Hint */}
             <motion.div

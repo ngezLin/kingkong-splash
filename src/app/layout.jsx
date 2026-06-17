@@ -279,8 +279,8 @@ export default function RootLayout({ children }) {
         {/* DNS Prefetch & Preconnect */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Local SEO Meta Tags */}
         <meta name="geo.region" content="ID-JI" />

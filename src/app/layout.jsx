@@ -1,4 +1,5 @@
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollSlide from "@/components/ScrollSlide";
 import "./globals.css";
 
 export const metadata = {
@@ -301,6 +302,7 @@ export default function RootLayout({ children }) {
 
       <body className="antialiased bg-sky-50 text-gray-800">
         <SmoothScroll>{children}</SmoothScroll>
+        <ScrollSlide />
       </body>
     </html>
   );

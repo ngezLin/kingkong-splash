@@ -1,9 +1,9 @@
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Kontak King Kong Splash",
+  title: "Kontak & Lokasi | King Kong Splash Pandaan",
   description:
-    "Hubungi King Kong Splash Pandaan untuk pertanyaan tiket, jam buka, lokasi, dan informasi wahana air.",
+    "Info lengkap alamat, rute perjalanan, nomor telepon, WhatsApp, dan jam buka operasional King Kong Splash Waterpark Pandaan.",
 };
 
 export default function ContactPage() {
@@ -18,8 +18,8 @@ export default function ContactPage() {
 
         <div className="bg-white shadow-lg rounded-xl p-8 space-y-4">
           <p className="text-gray-700">
-            📍 <strong>Alamat:</strong>
-            Desa Nogosari, Kecamatan Pandaan, Pasuruan, Jawa Timur
+            📍 <strong>Alamat:</strong>{" "}
+            Jalan Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris, Kec. Pandaan, Pasuruan, Jawa Timur 67156
           </p>
 
           <p className="text-gray-700">

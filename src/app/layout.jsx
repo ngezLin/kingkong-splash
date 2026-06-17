@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata = {
   title: {
     default:
-      "Kolam Renang Pandaan - King Kong Splash | Kolam Renang Kingkong Terbaik",
+      "King Kong Splash Waterpark Pandaan | Tiket, Lokasi & Wahana Air",
     template: "%s | King Kong Splash Pandaan",
   },
   description:
-    "Mencari kolam renang Pandaan? Kunjungi King Kong Splash, destinasi kolam renang King Kong & Kingkong Splash terbaik di Pandaan, Pasuruan. Seluncuran seru & kolam anak!",
+    "Info lengkap King Kong Splash Waterpark Pandaan terbaru: Harga tiket masuk mulai Rp15.000, lokasi, jam operasional, dan wahana seluncuran seru untuk keluarga!",
   metadataBase: new URL("https://kolamrenangkingkong.com"),
   keywords: [
     "Kolam Renang Pandaan",
@@ -145,7 +145,8 @@ export default function RootLayout({ children }) {
         image: "https://kolamrenangkingkong.com/images/hero.webp",
         url: "https://kolamrenangkingkong.com",
         telephone: "+6287701044580",
-        priceRange: "Rp15.000 - Rp20.000",
+        priceRange: "Rp15.000 - Rp25.000",
+        hasMap: "https://www.google.com/maps/place/Kingkong%20Splash%20Waterpark/@-7.6451416,112.7052399,17z",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Jl. Pahlawan Prof. Sunaryo No.9, Mbajang, Kb. Waris",
@@ -210,7 +211,7 @@ export default function RootLayout({ children }) {
             name: "Berapa harga tiket masuk King Kong Splash?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Harga tiket masuk King Kong Splash berkisar antara Rp15.000 hingga Rp25.000, tergantung pada hari kunjungan (weekdays/weekend/holiday).",
+              text: "Harga tiket masuk normal berkisar antara Rp15.000 hingga Rp25.000, tergantung pada hari kunjungan (weekdays/weekend/holiday). Kami juga menyediakan paket promo khusus untuk rombongan sekolah.",
             },
           },
           {
@@ -218,7 +219,7 @@ export default function RootLayout({ children }) {
             name: "Di mana lokasi Kolam Renang King Kong?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Lokasi King Kong Splash berada di Jl. Pahlawan Prof. Sunaryo No.9, Mbajang, Pandaan, Pasuruan, Jawa Timur.",
+              text: "Lokasi King Kong Splash berada di Jl. Pahlawan Prof. Sunaryo No.9, Mbajang, Kecamatan Pandaan, Pasuruan, Jawa Timur 67156. Lokasi kami sangat mudah diakses dengan kendaraan pribadi dan dekat dengan pusat kota Pandaan.",
             },
           },
           {
@@ -226,7 +227,7 @@ export default function RootLayout({ children }) {
             name: "Jam berapa King Kong Splash buka?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "King Kong Splash buka setiap hari (Senin-Minggu) mulai pukul 07.00 WIB hingga 17.00 WIB.",
+              text: "King Kong Splash buka setiap hari (Senin - Minggu) mulai pukul 07.00 WIB hingga 17.00 WIB, cocok untuk petualangan air pagi hari maupun bersantai di sore hari.",
             },
           },
           {
@@ -234,7 +235,23 @@ export default function RootLayout({ children }) {
             name: "Apa tempat renang di Pandaan yang paling direkomendasikan?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "King Kong Splash adalah tempat renang di Pandaan yang sangat direkomendasikan karena memiliki wahana lengkap, air yang bersih, dan lokasi yang mudah dijangkau (kolam Pandaan favorit).",
+              text: "King Kong Splash adalah tempat renang di Pandaan yang sangat direkomendasikan berkat wahana airnya yang lengkap, air kolam yang bersih dan selalu terawat, area kolam anak yang aman, serta pemandangan asri pegunungan.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Apakah ada promo tiket rombongan sekolah di King Kong Splash?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ya! Kami menawarkan promo khusus untuk rombongan sekolah dengan fasilitas lengkap, area privat, serta gratis 1 tiket masuk untuk setiap pembelian kelipatan 20 tiket. Silakan hubungi admin kami untuk penawaran harga terbaik.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Apakah ada wahana air ekstrem di King Kong Splash?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "King Kong Splash menyediakan seluncuran raksasa (water slide) yang seru untuk menguji adrenalin Anda dengan aman, serta wahana air interaktif yang menyenangkan di area kolam anak.",
             },
           },
         ],
@@ -259,9 +276,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className="scroll-smooth">
       <head>
-        {/* DNS Prefetch */}
+        {/* DNS Prefetch & Preconnect */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+        {/* Local SEO Meta Tags */}
+        <meta name="geo.region" content="ID-JI" />
+        <meta name="geo.placename" content="Pasuruan" />
+        <meta name="geo.position" content="-7.645142;112.705240" />
+        <meta name="ICBM" content="-7.645142, 112.705240" />
 
         {/* JSON-LD */}
         <script

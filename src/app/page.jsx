@@ -4,6 +4,7 @@ import Event from "@/components/Event";
 import Pricing from "@/components/Pricing";
 import Gallery from "@/components/Gallery";
 import Merchandise from "@/components/Merchandise";
+import FAQ from "@/components/FAQ";
 import AboutMap from "@/components/AboutMap";
 import Footer from "@/components/Footer";
 import Description from "@/components/Description";
@@ -20,6 +21,7 @@ export default function Page() {
       <Description />
       <Gallery />
       <Merchandise />
+      <FAQ />
       <AboutMap />
       <Footer />
     </main>

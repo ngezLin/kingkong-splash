@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Tentang King Kong Splash",
+  title: "Tentang Kami | King Kong Splash Pandaan",
   description:
-    "Pelajari lebih lanjut tentang King Kong Splash Pandaan — kolam renang dan wahana air untuk keluarga, anak-anak, dan tempat wisata favorit di Pasuruan.",
+    "Pelajari profil King Kong Splash Pandaan, sejarah singkat, visi kami, dan mengapa kami menjadi kolam renang keluarga terfavorit.",
 };
 
 export default function AboutPage() {

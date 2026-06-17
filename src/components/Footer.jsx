@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   FaInstagram,
   FaFacebook,
@@ -43,6 +44,25 @@ export default function Footer() {
               >
                 087701044580
               </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Halaman */}
+        <div className="flex-1">
+          <h3 className="text-lg font-semibold text-[#9CDEEE] mb-3">
+            Halaman
+          </h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/about" className="hover:text-[#6FCEDC] transition">
+                Tentang Kami
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[#6FCEDC] transition">
+                Kontak & Lokasi
+              </Link>
             </li>
           </ul>
         </div>
